@@ -1,0 +1,232 @@
+\doxysection{src/tokenizer.cpp File Reference}
+\hypertarget{tokenizer_8cpp}{}\label{tokenizer_8cpp}\index{src/tokenizer.cpp@{src/tokenizer.cpp}}
+
+
+Contains functions for tokenizing input lines and refining token sequences.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include "{}tokenizer.\+h"{}}\newline
+{\ttfamily \#include "{}token.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \mbox{\hyperlink{tokenizer_8cpp_a51ceff5fce60b31beac1fd1697242871}{get\+Word\+Type}} (const string \&, int, int)
+\begin{DoxyCompactList}\small\item\em Determines the type of a word based on a predefined keyword map. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{tokenizer_8cpp_a47edf23eaaa39e0b95dcdbfab6e5fa4c}{refine\+Tokens}} (vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&)
+\begin{DoxyCompactList}\small\item\em Refines the token vector by combining valid multi-\/word sequences, removing extra whitespace tokens, and rejecting invalid syntax (e.\+g., undefined tokens, negative numbers, adjacent word/quantity). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tokenizer_8cpp_a8fe3195bddfb66c430fbfe9641f8be50}{print\+Tokens}} (const vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&)
+\begin{DoxyCompactList}\small\item\em Prints the tokens to the standard output. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{tokenizer_8cpp_a5000379e35d3656704bc0ca859f032e8}{parse\+Command}} (const vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&)
+\begin{DoxyCompactList}\small\item\em External parser function that analyzes tokens and executes appropriate logic. \end{DoxyCompactList}\item 
+optional$<$ vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ $>$ \mbox{\hyperlink{tokenizer_8cpp_a777b1a2b37b30bd74c571c35cd63d060}{tokenize\+Line}} (const string \&line)
+\begin{DoxyCompactList}\small\item\em Tokenizes a given input line into lexical tokens (words, numbers, punctuation, etc.). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{tokenizer_8cpp_abc6ffa910171787cd3ae051c53efc03b}{execute\+\_\+line}} (const string \&line)
+\begin{DoxyCompactList}\small\item\em Executes a line by tokenizing and parsing it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tokenizer_8cpp_aa23a8e5aadad09c8460c43ccda816483}{print\+Tokens}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&tokens)
+\begin{DoxyCompactList}\small\item\em Utility function for debugging — prints tokens to stdout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains functions for tokenizing input lines and refining token sequences. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{tokenizer_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{tokenizer_8cpp_abc6ffa910171787cd3ae051c53efc03b}\index{tokenizer.cpp@{tokenizer.cpp}!execute\_line@{execute\_line}}
+\index{execute\_line@{execute\_line}!tokenizer.cpp@{tokenizer.cpp}}
+\doxysubsubsection{\texorpdfstring{execute\_line()}{execute\_line()}}
+{\footnotesize\ttfamily \label{tokenizer_8cpp_abc6ffa910171787cd3ae051c53efc03b} 
+bool execute\+\_\+line (\begin{DoxyParamCaption}\item[{const string \&}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Executes a line by tokenizing and parsing it. 
+
+
+\begin{DoxyItemize}
+\item Tokenizes the line.
+\item Refines and validates tokens.
+\item Passes them to the parser.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The input line to process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the command is parsing is successful; false if invalid input or parsing fails. 
+\end{DoxyReturn}
+\Hypertarget{tokenizer_8cpp_a51ceff5fce60b31beac1fd1697242871}\index{tokenizer.cpp@{tokenizer.cpp}!getWordType@{getWordType}}
+\index{getWordType@{getWordType}!tokenizer.cpp@{tokenizer.cpp}}
+\doxysubsubsection{\texorpdfstring{getWordType()}{getWordType()}}
+{\footnotesize\ttfamily \label{tokenizer_8cpp_a51ceff5fce60b31beac1fd1697242871} 
+\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} get\+Word\+Type (\begin{DoxyParamCaption}\item[{const string \&}]{line}{, }\item[{int}]{lex\+Start\+Index}{, }\item[{int}]{lex\+Length}{}\end{DoxyParamCaption})}
+
+
+
+Determines the type of a word based on a predefined keyword map. 
+
+Looks up the type of a word using the key\+Map defined in \doxylink{token_8h}{token.\+h}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The full input line. \\
+\hline
+{\em lex\+Start\+Index} & The starting index of the word in the line. \\
+\hline
+{\em lex\+Length} & The length of the word. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type} The type of the word\+: if found in key\+Map, returns mapped \doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}; otherwise TOKEN\+\_\+\+WORD.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em line} & Full input line. \\
+\hline
+{\em lex\+Start\+Index} & Starting index of the lexeme in the line. \\
+\hline
+{\em lex\+Length} & Length of the lexeme. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type} representing the classification of the word. 
+\end{DoxyReturn}
+\Hypertarget{tokenizer_8cpp_a5000379e35d3656704bc0ca859f032e8}\index{tokenizer.cpp@{tokenizer.cpp}!parseCommand@{parseCommand}}
+\index{parseCommand@{parseCommand}!tokenizer.cpp@{tokenizer.cpp}}
+\doxysubsubsection{\texorpdfstring{parseCommand()}{parseCommand()}}
+{\footnotesize\ttfamily \label{tokenizer_8cpp_a5000379e35d3656704bc0ca859f032e8} 
+bool parse\+Command (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{tokens}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+External parser function that analyzes tokens and executes appropriate logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & Vector of refined tokens to parse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If parsing is successful and command is valid. 
+
+false If no valid command is matched.
+\end{DoxyReturn}
+External parser function that analyzes tokens and executes appropriate logic.
+
+This function checks each possible grammar rule (from {\ttfamily action\+To\+Syntax\+Map}) against the input tokens. If a match is found, the associated function (from {\ttfamily action\+To\+Func\+Map}) is called.
+
+Special handling is included for recursive ingredient and trophy lists and context-\/sensitive keywords.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & Vector of tokens representing the user command. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If a matching grammar rule is found and function is successfully invoked. 
+
+false If no valid syntax pattern matches the tokens. 
+\end{DoxyReturn}
+\Hypertarget{tokenizer_8cpp_aa23a8e5aadad09c8460c43ccda816483}\index{tokenizer.cpp@{tokenizer.cpp}!printTokens@{printTokens}}
+\index{printTokens@{printTokens}!tokenizer.cpp@{tokenizer.cpp}}
+\doxysubsubsection{\texorpdfstring{printTokens()}{printTokens()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{tokenizer_8cpp_aa23a8e5aadad09c8460c43ccda816483} 
+void print\+Tokens (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{tokens}{}\end{DoxyParamCaption})}
+
+
+
+Utility function for debugging — prints tokens to stdout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & Vector of tokens to print. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{tokenizer_8cpp_a8fe3195bddfb66c430fbfe9641f8be50}\index{tokenizer.cpp@{tokenizer.cpp}!printTokens@{printTokens}}
+\index{printTokens@{printTokens}!tokenizer.cpp@{tokenizer.cpp}}
+\doxysubsubsection{\texorpdfstring{printTokens()}{printTokens()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{tokenizer_8cpp_a8fe3195bddfb66c430fbfe9641f8be50} 
+void print\+Tokens (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{}{}\end{DoxyParamCaption})}
+
+
+
+Prints the tokens to the standard output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & Vector of tokens to print. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{tokenizer_8cpp_a47edf23eaaa39e0b95dcdbfab6e5fa4c}\index{tokenizer.cpp@{tokenizer.cpp}!refineTokens@{refineTokens}}
+\index{refineTokens@{refineTokens}!tokenizer.cpp@{tokenizer.cpp}}
+\doxysubsubsection{\texorpdfstring{refineTokens()}{refineTokens()}}
+{\footnotesize\ttfamily \label{tokenizer_8cpp_a47edf23eaaa39e0b95dcdbfab6e5fa4c} 
+bool refine\+Tokens (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{tokens}{}\end{DoxyParamCaption})}
+
+
+
+Refines the token vector by combining valid multi-\/word sequences, removing extra whitespace tokens, and rejecting invalid syntax (e.\+g., undefined tokens, negative numbers, adjacent word/quantity). 
+
+Refines a token stream by validating structure, merging adjacent words with single space, and eliminating whitespace.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & Reference to the vector of tokens to be refined. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If token sequence is valid and successfully refined. 
+
+false If invalid syntax is detected.
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item Rejects undefined or illegal syntax (e.\+g., 0 or negative numbers)
+\item Merges word sequences into TOKEN\+\_\+\+MULTI\+\_\+\+WORD
+\item Removes whitespace tokens after merging
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & Reference to the vector of tokens to refine. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if refinement is successful; false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{tokenizer_8cpp_a777b1a2b37b30bd74c571c35cd63d060}\index{tokenizer.cpp@{tokenizer.cpp}!tokenizeLine@{tokenizeLine}}
+\index{tokenizeLine@{tokenizeLine}!tokenizer.cpp@{tokenizer.cpp}}
+\doxysubsubsection{\texorpdfstring{tokenizeLine()}{tokenizeLine()}}
+{\footnotesize\ttfamily \label{tokenizer_8cpp_a777b1a2b37b30bd74c571c35cd63d060} 
+optional$<$ vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ $>$ tokenize\+Line (\begin{DoxyParamCaption}\item[{const string \&}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Tokenizes a given input line into lexical tokens (words, numbers, punctuation, etc.). 
+
+Handles\+:
+\begin{DoxyItemize}
+\item Single and multiple spaces
+\item Positive quantities (rejects 0 and negative)
+\item Commas, question marks
+\item Word labeling based on context
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The input string to tokenize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+optional$<$vector$<$\+Token$>$$>$ Vector of tokens if the line is valid; nullopt if invalid syntax is detected. 
+\end{DoxyReturn}

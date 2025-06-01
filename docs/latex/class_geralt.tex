@@ -1,0 +1,382 @@
+\doxysection{Geralt Class Reference}
+\hypertarget{class_geralt}{}\label{class_geralt}\index{Geralt@{Geralt}}
+
+
+Class that represents the Witcher’s knowledge and inventory.  
+
+
+
+
+{\ttfamily \#include $<$geralt.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ingredient}{Ingredient}} $>$ $>$ \& \mbox{\hyperlink{class_geralt_a18d243fa7b3a232c6fa08389ca5e36f4}{get\+Ingredients}} ()
+\begin{DoxyCompactList}\small\item\em Getter functions return the private data fields which are encapsulated and declared private. \end{DoxyCompactList}\item 
+static std\+::map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_potion}{Potion}} $>$ $>$ \& \mbox{\hyperlink{class_geralt_a7e8cd9e286c414309e8807e685b8929d}{get\+Potions}} ()
+\begin{DoxyCompactList}\small\item\em Returns a modifiable reference to the global potions map. \end{DoxyCompactList}\item 
+static std\+::map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_monster}{Monster}} $>$ $>$ \& \mbox{\hyperlink{class_geralt_aca5f175cd568fd60f8d1c0eaf112ffcf}{get\+Monsters}} ()
+\begin{DoxyCompactList}\small\item\em Returns a modifiable reference to the global monsters map. \end{DoxyCompactList}\item 
+static std\+::map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_trophy}{Trophy}} $>$ $>$ \& \mbox{\hyperlink{class_geralt_afffc1d9833bb26af2bb15a04bf52452f}{get\+Trophies}} ()
+\begin{DoxyCompactList}\small\item\em Returns a modifiable reference to the global trophies map. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_a2ff66a4885f5fcedc4226978a420870e}{loot}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Functions that execute the corresponding action. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_a4b54998bd2e74a874304a955e4e729b5}{trade}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Processes a {\bfseries{trade}} action. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_acffa4d0ce4b4666c178cac5a8ab37e81}{brew}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Handles the {\bfseries{brew}} action. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_a363e69d75a50dcad4009a0b937d60b0c}{learn\+Sign}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Registers a new sign as effective against a monster in the bestiary. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_a03a1e18d6a821fe178393de95189dfd9}{learn\+Potion}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Registers a new potion as effective against a monster in the bestiary and potion inventory. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_a0c1b1a882c15615ffa7655acba8fcdca}{learn\+Formula}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Learns and stores a new alchemy formula for a potion. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_ae013a28c0547b280b2308e2b59b3f6ca}{encounter}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Resolves a monster encounter. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_a3734ab8df815c286e052ff4210b4b3a4}{query\+Specific\+Ingredient}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Prints the quantity of the given ingredient. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_a2d99f735e5c5a1982f5a1802c9654cde}{query\+Specific\+Potion}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Prints the quantity of the given potion. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_a1d9fb376cb654f218fc9e5fcd03159df}{query\+Specific\+Trophy}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Prints the quantity of the given trophy. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_aec02c92ffc5103d74b187bb431e66ba5}{query\+All\+Ingredients}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Prints all the ingredients and their quantities. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_a48c1bf5f5a7bf828804503eaa310cea3}{query\+All\+Potions}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Prints all the potions and their quantities. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_aa112f614e5746af13acf0e1edb743f98}{query\+All\+Trophies}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Prints all the trophies and their quantities. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_a527b7f120721da78df5b2981d9709a25}{query\+Effectiveness}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Lists all known effective signs and potions against a monster. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_geralt_ac9c05b7fc8e22ab133065a78026eddbb}{query\+Formula}} (const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&token\+List)
+\begin{DoxyCompactList}\small\item\em Prints the sorted formula for a potion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that represents the Witcher’s knowledge and inventory. 
+
+All members are static; the class is never instantiated. ~\newline
+ Users interact with the state via the high-\/level action/query functions. 
+
+\label{doc-func-members}
+\Hypertarget{class_geralt_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_geralt_acffa4d0ce4b4666c178cac5a8ab37e81}\index{Geralt@{Geralt}!brew@{brew}}
+\index{brew@{brew}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{brew()}{brew()}}
+{\footnotesize\ttfamily \label{class_geralt_acffa4d0ce4b4666c178cac5a8ab37e81} 
+void Geralt\+::brew (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handles the {\bfseries{brew}} action. 
+
+Checks if the formula for the potion is known. If not, prints “\+No formula for $<$potion$>$”. If the formula is known, checks if all required ingredients are present in sufficient quantity. On success, decrements ingredient quantities and increases potion count, printing “\+Alchemy item created\+: $<$potion$>$”. If ingredients are insufficient, prints “\+Not enough ingredients”.
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized input line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_ae013a28c0547b280b2308e2b59b3f6ca}\index{Geralt@{Geralt}!encounter@{encounter}}
+\index{encounter@{encounter}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{encounter()}{encounter()}}
+{\footnotesize\ttfamily \label{class_geralt_ae013a28c0547b280b2308e2b59b3f6ca} 
+void Geralt\+::encounter (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Resolves a monster encounter. 
+
+Determines whether \doxylink{class_geralt}{Geralt} can defeat the monster based on known effective signs/potions and available potion quantities, updates trophies and potion counts accordingly, and prints the outcome line defined by the spec.
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized input line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_a18d243fa7b3a232c6fa08389ca5e36f4}\index{Geralt@{Geralt}!getIngredients@{getIngredients}}
+\index{getIngredients@{getIngredients}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{getIngredients()}{getIngredients()}}
+{\footnotesize\ttfamily \label{class_geralt_a18d243fa7b3a232c6fa08389ca5e36f4} 
+map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ingredient}{Ingredient}} $>$ $>$ \& Geralt\+::get\+Ingredients (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Getter functions return the private data fields which are encapsulated and declared private. 
+
+Returns a modifiable reference to the global ingredients map.
+
+The returned reference allows callers to read or mutate the shared container that represents Geralt’s current ingredient inventory.
+
+\begin{DoxyReturn}{Returns}
+Reference to the underlying {\ttfamily std\+::map}. 
+\end{DoxyReturn}
+\Hypertarget{class_geralt_aca5f175cd568fd60f8d1c0eaf112ffcf}\index{Geralt@{Geralt}!getMonsters@{getMonsters}}
+\index{getMonsters@{getMonsters}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{getMonsters()}{getMonsters()}}
+{\footnotesize\ttfamily \label{class_geralt_aca5f175cd568fd60f8d1c0eaf112ffcf} 
+map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_monster}{Monster}} $>$ $>$ \& Geralt\+::get\+Monsters (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns a modifiable reference to the global monsters map. 
+
+The returned reference allows callers to read or mutate the shared container that represents Geralt’s current bestiary knowledge.
+
+\begin{DoxyReturn}{Returns}
+Reference to the underlying {\ttfamily std\+::map}. 
+\end{DoxyReturn}
+\Hypertarget{class_geralt_a7e8cd9e286c414309e8807e685b8929d}\index{Geralt@{Geralt}!getPotions@{getPotions}}
+\index{getPotions@{getPotions}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{getPotions()}{getPotions()}}
+{\footnotesize\ttfamily \label{class_geralt_a7e8cd9e286c414309e8807e685b8929d} 
+map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_potion}{Potion}} $>$ $>$ \& Geralt\+::get\+Potions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns a modifiable reference to the global potions map. 
+
+The returned reference allows callers to read or mutate the shared container that represents Geralt’s current potion inventory.
+
+\begin{DoxyReturn}{Returns}
+Reference to the underlying {\ttfamily std\+::map}. 
+\end{DoxyReturn}
+\Hypertarget{class_geralt_afffc1d9833bb26af2bb15a04bf52452f}\index{Geralt@{Geralt}!getTrophies@{getTrophies}}
+\index{getTrophies@{getTrophies}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{getTrophies()}{getTrophies()}}
+{\footnotesize\ttfamily \label{class_geralt_afffc1d9833bb26af2bb15a04bf52452f} 
+map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_trophy}{Trophy}} $>$ $>$ \& Geralt\+::get\+Trophies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns a modifiable reference to the global trophies map. 
+
+The returned reference allows callers to read or mutate the shared container that represents Geralt’s current trophy inventory.
+
+\begin{DoxyReturn}{Returns}
+Reference to the underlying {\ttfamily std\+::map}. 
+\end{DoxyReturn}
+\Hypertarget{class_geralt_a0c1b1a882c15615ffa7655acba8fcdca}\index{Geralt@{Geralt}!learnFormula@{learnFormula}}
+\index{learnFormula@{learnFormula}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{learnFormula()}{learnFormula()}}
+{\footnotesize\ttfamily \label{class_geralt_a0c1b1a882c15615ffa7655acba8fcdca} 
+void Geralt\+::learn\+Formula (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Learns and stores a new alchemy formula for a potion. 
+
+Parses {\ttfamily \texorpdfstring{$<$}{<}quantity\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}ingredient\texorpdfstring{$>$}{>}} pairs and defines the potion\textquotesingle{}s formula if not already known. Adds new ingredients to inventory if needed. Prints output indicating new formula or if already known.
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized input line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_a03a1e18d6a821fe178393de95189dfd9}\index{Geralt@{Geralt}!learnPotion@{learnPotion}}
+\index{learnPotion@{learnPotion}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{learnPotion()}{learnPotion()}}
+{\footnotesize\ttfamily \label{class_geralt_a03a1e18d6a821fe178393de95189dfd9} 
+void Geralt\+::learn\+Potion (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Registers a new potion as effective against a monster in the bestiary and potion inventory. 
+
+Updates bestiary and potion knowledge. Adds the monster or potion if new, and associates the potion as effective against the monster. Prints output according to whether knowledge is new or already known.
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized input line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_a363e69d75a50dcad4009a0b937d60b0c}\index{Geralt@{Geralt}!learnSign@{learnSign}}
+\index{learnSign@{learnSign}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{learnSign()}{learnSign()}}
+{\footnotesize\ttfamily \label{class_geralt_a363e69d75a50dcad4009a0b937d60b0c} 
+void Geralt\+::learn\+Sign (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Registers a new sign as effective against a monster in the bestiary. 
+
+Updates the bestiary knowledge by associating the specified sign with the monster. If the monster is new, adds the monster to the bestiary; otherwise, updates its effectiveness list. Prints appropriate output depending on whether knowledge is new or already known.
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized input line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_a2ff66a4885f5fcedc4226978a420870e}\index{Geralt@{Geralt}!loot@{loot}}
+\index{loot@{loot}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{loot()}{loot()}}
+{\footnotesize\ttfamily \label{class_geralt_a2ff66a4885f5fcedc4226978a420870e} 
+void Geralt\+::loot (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Functions that execute the corresponding action. 
+
+Handles the loot action.
+
+Increases the quantity of each looted ingredient by the specified amount.
+
+Outputs\+: “\+Alchemy ingredients obtained”
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized user input line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_aec02c92ffc5103d74b187bb431e66ba5}\index{Geralt@{Geralt}!queryAllIngredients@{queryAllIngredients}}
+\index{queryAllIngredients@{queryAllIngredients}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{queryAllIngredients()}{queryAllIngredients()}}
+{\footnotesize\ttfamily \label{class_geralt_aec02c92ffc5103d74b187bb431e66ba5} 
+void Geralt\+::query\+All\+Ingredients (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints all the ingredients and their quantities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized input line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_a48c1bf5f5a7bf828804503eaa310cea3}\index{Geralt@{Geralt}!queryAllPotions@{queryAllPotions}}
+\index{queryAllPotions@{queryAllPotions}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{queryAllPotions()}{queryAllPotions()}}
+{\footnotesize\ttfamily \label{class_geralt_a48c1bf5f5a7bf828804503eaa310cea3} 
+void Geralt\+::query\+All\+Potions (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints all the potions and their quantities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized input line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_aa112f614e5746af13acf0e1edb743f98}\index{Geralt@{Geralt}!queryAllTrophies@{queryAllTrophies}}
+\index{queryAllTrophies@{queryAllTrophies}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{queryAllTrophies()}{queryAllTrophies()}}
+{\footnotesize\ttfamily \label{class_geralt_aa112f614e5746af13acf0e1edb743f98} 
+void Geralt\+::query\+All\+Trophies (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints all the trophies and their quantities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized input line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_a527b7f120721da78df5b2981d9709a25}\index{Geralt@{Geralt}!queryEffectiveness@{queryEffectiveness}}
+\index{queryEffectiveness@{queryEffectiveness}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{queryEffectiveness()}{queryEffectiveness()}}
+{\footnotesize\ttfamily \label{class_geralt_a527b7f120721da78df5b2981d9709a25} 
+void Geralt\+::query\+Effectiveness (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lists all known effective signs and potions against a monster. 
+
+Merges two vectors, sorts, and prints them comma‑separated, or prints “\+No knowledge of $<$monster$>$” if none exist.
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized input line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_ac9c05b7fc8e22ab133065a78026eddbb}\index{Geralt@{Geralt}!queryFormula@{queryFormula}}
+\index{queryFormula@{queryFormula}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{queryFormula()}{queryFormula()}}
+{\footnotesize\ttfamily \label{class_geralt_ac9c05b7fc8e22ab133065a78026eddbb} 
+void Geralt\+::query\+Formula (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the sorted formula for a potion. 
+
+Sorts potions by descending quantity, secondary ascending by name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized query line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_a3734ab8df815c286e052ff4210b4b3a4}\index{Geralt@{Geralt}!querySpecificIngredient@{querySpecificIngredient}}
+\index{querySpecificIngredient@{querySpecificIngredient}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{querySpecificIngredient()}{querySpecificIngredient()}}
+{\footnotesize\ttfamily \label{class_geralt_a3734ab8df815c286e052ff4210b4b3a4} 
+void Geralt\+::query\+Specific\+Ingredient (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the quantity of the given ingredient. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized input line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_a2d99f735e5c5a1982f5a1802c9654cde}\index{Geralt@{Geralt}!querySpecificPotion@{querySpecificPotion}}
+\index{querySpecificPotion@{querySpecificPotion}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{querySpecificPotion()}{querySpecificPotion()}}
+{\footnotesize\ttfamily \label{class_geralt_a2d99f735e5c5a1982f5a1802c9654cde} 
+void Geralt\+::query\+Specific\+Potion (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the quantity of the given potion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized input line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_a1d9fb376cb654f218fc9e5fcd03159df}\index{Geralt@{Geralt}!querySpecificTrophy@{querySpecificTrophy}}
+\index{querySpecificTrophy@{querySpecificTrophy}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{querySpecificTrophy()}{querySpecificTrophy()}}
+{\footnotesize\ttfamily \label{class_geralt_a1d9fb376cb654f218fc9e5fcd03159df} 
+void Geralt\+::query\+Specific\+Trophy (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the quantity of the given trophy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized input line. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_geralt_a4b54998bd2e74a874304a955e4e729b5}\index{Geralt@{Geralt}!trade@{trade}}
+\index{trade@{trade}!Geralt@{Geralt}}
+\doxysubsubsection{\texorpdfstring{trade()}{trade()}}
+{\footnotesize\ttfamily \label{class_geralt_a4b54998bd2e74a874304a955e4e729b5} 
+void Geralt\+::trade (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{token\+List}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Processes a {\bfseries{trade}} action. 
+
+Verifies that \doxylink{class_geralt}{Geralt} owns every trophy requested in sufficient quantity. If so, decrements trophies and increases ingredients; otherwise leaves state unchanged.
+
+Outputs\+: ~\newline
+ “\+Trade successful” on success ~\newline
+ “\+Not enough trophies” on failure
+
+
+\begin{DoxyParams}{Parameters}
+{\em token\+List} & Tokenized input line. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{geralt_8h}{geralt.\+h}}\item 
+src/\mbox{\hyperlink{geralt_8cpp}{geralt.\+cpp}}\end{DoxyCompactItemize}

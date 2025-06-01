@@ -1,0 +1,59 @@
+\doxysection{potion.\+h}
+\hypertarget{potion_8h_source}{}\label{potion_8h_source}\index{src/potion.h@{src/potion.h}}
+\mbox{\hyperlink{potion_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ POTION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ POTION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_comparator}{Comparator}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_comparator_ac615787bf790d35c619b367cdae96cb3}{operator()}}(\textcolor{keyword}{const}\ pair<string,\ int>\&\ a,\ \textcolor{keyword}{const}\ pair<string,\ int>\&\ b)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ their\ quantities\ are\ different,\ they\ are\ sorted\ by\ their\ quantities}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a.second\ !=\ b.second)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a.second\ >\ b.second;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ they\ have\ the\ same\ quantity,\ then\ they\ are\ sorted\ by\ their\ names}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a.first\ <\ b.first;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_potion_a183ed20184da0356771648f241e6ef6d}{Potion}}\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{string}\ name;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ quantity;}
+\DoxyCodeLine{00046\ \ \ \ \ vector<pair<string,\ int>>\ formula;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ formulaDefined;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ sortFormula();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_potion_a183ed20184da0356771648f241e6ef6d}{Potion}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ name);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_potion_ae28d423b1bc62b7306d2e60c2fa1bf23}{getQuantity}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_potion_abc52b05b89f916a1023d6aabb66e1e20}{increaseQuantity}}(\textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_potion_a1ea80c8dc4d45cdf08d586e64dac86a2}{decreaseQuantity}}(\textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_potion_ab80630bb2ae02c49f293267b61f14cd0}{isFormulaDefined}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_potion_a76540dcea46dbe8d33267365befb430b}{defineFormula}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_potion_a9ae9e6bec59fe74ef311f32579620a3d}{addToFormula}}(\textcolor{keywordtype}{int}\ quantity,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ ingredientName);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{const}\ vector<pair<string,\ int>>\&\ \mbox{\hyperlink{class_potion_a288ba12a892b440b0aeb3e8f68c662ac}{getFormula}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{const}\ vector<pair<string,\ int>>\&\ \ \mbox{\hyperlink{class_potion_a8a57db7c01ecfe840345c4f6239c4c40}{getSortedFormula}}();}
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

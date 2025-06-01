@@ -1,0 +1,102 @@
+\doxysection{Token Class Reference}
+\hypertarget{class_token}{}\label{class_token}\index{Token@{Token}}
+
+
+\texorpdfstring{$<$}{<} Required for \doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type} definition  
+
+
+
+
+{\ttfamily \#include $<$token.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_token_a8bddd2b63820a1678e2db37df8779dbf}{Token}} (const std\+::string \&content, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_token}{Token} with the specified content and type. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_token_ad49232c2ccc87c8df0e699955c3d3c45}{get\+Content}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the content of the token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \mbox{\hyperlink{class_token_a31eae18f897e22a446c82e864dfbf5d4}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the type of the token. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Required for \doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type} definition 
+
+Represents a single lexical unit (token) with its type and content.
+
+Each token is identified during the tokenization phase and consists of\+:
+\begin{DoxyItemize}
+\item the raw content (e.\+g., "{}\+Geralt"{}, "{}potion"{}, "{}3"{})
+\item its type (as defined by the \doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type} enum) 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_token_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_token_a8bddd2b63820a1678e2db37df8779dbf}\index{Token@{Token}!Token@{Token}}
+\index{Token@{Token}!Token@{Token}}
+\doxysubsubsection{\texorpdfstring{Token()}{Token()}}
+{\footnotesize\ttfamily \label{class_token_a8bddd2b63820a1678e2db37df8779dbf} 
+Token\+::\+Token (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{content}{, }\item[{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_token}{Token} with the specified content and type. 
+
+Constructs a \doxylink{class_token}{Token} with given content and type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & The string content of the token. \\
+\hline
+{\em type} & The \doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type} of this token.\\
+\hline
+{\em content} & The string content (lexeme) of the token. \\
+\hline
+{\em type} & The \doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type} associated with this content. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_token_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_token_ad49232c2ccc87c8df0e699955c3d3c45}\index{Token@{Token}!getContent@{getContent}}
+\index{getContent@{getContent}!Token@{Token}}
+\doxysubsubsection{\texorpdfstring{getContent()}{getContent()}}
+{\footnotesize\ttfamily \label{class_token_ad49232c2ccc87c8df0e699955c3d3c45} 
+std\+::string Token\+::get\+Content (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the content of the token. 
+
+Gets the content of the token.
+
+\begin{DoxyReturn}{Returns}
+std\+::string The literal text value of the token.
+
+std\+::string The string that represents the lexeme of the token. 
+\end{DoxyReturn}
+\Hypertarget{class_token_a31eae18f897e22a446c82e864dfbf5d4}\index{Token@{Token}!getType@{getType}}
+\index{getType@{getType}!Token@{Token}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_token_a31eae18f897e22a446c82e864dfbf5d4} 
+\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} Token\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the type of the token. 
+
+Gets the type of the token.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type} The enumeration value representing the type of this token. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{token_8h}{token.\+h}}\item 
+src/\mbox{\hyperlink{token_8cpp}{token.\+cpp}}\end{DoxyCompactItemize}

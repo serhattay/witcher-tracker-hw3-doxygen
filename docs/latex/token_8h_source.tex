@@ -1,0 +1,32 @@
+\doxysection{token.\+h}
+\hypertarget{token_8h_source}{}\label{token_8h_source}\index{src/token.h@{src/token.h}}
+\mbox{\hyperlink{token_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ TOKEN\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ TOKEN\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tokenizer_8h}{tokenizer.h}}"{}}\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_token_a8bddd2b63820a1678e2db37df8779dbf}{Token}}\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ content\_;\ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\ type\_;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_token_a8bddd2b63820a1678e2db37df8779dbf}{Token}}(\textcolor{keyword}{const}\ std::string\&\ content,\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\ type);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ \mbox{\hyperlink{class_token_ad49232c2ccc87c8df0e699955c3d3c45}{getContent}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\ \mbox{\hyperlink{class_token_a31eae18f897e22a446c82e864dfbf5d4}{getType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ TOKEN\_H}}
+
+\end{DoxyCode}

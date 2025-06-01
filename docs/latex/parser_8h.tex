@@ -1,0 +1,340 @@
+\doxysection{src/parser.h File Reference}
+\hypertarget{parser_8h}{}\label{parser_8h}\index{src/parser.h@{src/parser.h}}
+
+
+Defines parser action types and their corresponding syntax rules (token patterns).  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}tokenizer.\+h"{}}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02d}{Parser\+Action\+Type}} \{ \newline
+\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02daba8203c6b17bf616140e336373a4a672}{LOOT\+\_\+\+ACTION}} = 0
+, \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02dab7d03b2c32d46b3ebfb061b72e4afbd9}{TRADE\+\_\+\+ACTION}}
+, \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02daf4ba1c812c84dda65be8b44f7bf430a2}{BREW\+\_\+\+ACTION}}
+, \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02daba75b3afe97029fe9fde18b877646f8f}{KNOWLEDGE\+\_\+\+EFFECTIVENESS\+\_\+\+SIGN}} = 3
+, \newline
+\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da78b1ea9585f2683ae60d8f935608b00b}{KNOWLEDGE\+\_\+\+EFFECTIVENESS\+\_\+\+POTION}}
+, \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02dad4263a113e27e7d059b0ab66342d3f24}{KNOWLEDGE\+\_\+\+POTION\+\_\+\+FORMULA}} = 5
+, \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da9f93534eed94db541fa3c25728591555}{ENCOUNTER}} = 6
+, \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02daeb4af02d145b8bedfb1e51c7c7057103}{TOTAL\+\_\+\+ALL\+\_\+\+INGREDIENT\+\_\+\+QUERY}}
+, \newline
+\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da3725955518e9656ad2e6c7416d701bb7}{TOTAL\+\_\+\+ALL\+\_\+\+POTION\+\_\+\+QUERY}}
+, \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da5db0e0c75f2144b03f29d5e7993ef48d}{TOTAL\+\_\+\+ALL\+\_\+\+TROPHY\+\_\+\+QUERY}}
+, \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02dac09d1bf484ca7e2aca84af3a1746feab}{TOTAL\+\_\+\+SPECIFIC\+\_\+\+INGREDIENT\+\_\+\+QUERY}} = 10
+, \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da561d557e0ec9cfa0c7fb984b9e4e4326}{TOTAL\+\_\+\+SPECIFIC\+\_\+\+POTION\+\_\+\+QUERY}}
+, \newline
+\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da5af9772b366fcb7cdb23431ca508a4ac}{TOTAL\+\_\+\+SPECIFIC\+\_\+\+TROPHY\+\_\+\+QUERY}}
+, \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da8d69a4c5d7cd4f64693ca704166c8365}{BESTIARY\+\_\+\+QUERY}} = 13
+, \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da0390b0f3325f73582c5197003a264c7c}{ALCHEMY\+\_\+\+QUERY}}
+, \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da6806f6a7a0c0b62e7c8c467e490721a8}{EXIT\+\_\+\+COMMAND}} = 15
+ \}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Required for \doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type} definitions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_aee294cf913fc698d7416b397a56fb4c0}{loot\+Action\+Vec}} = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\+\_\+\+GERALT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3fae50190858a4171ed2b22b99a5ab2c}{TOKEN\+\_\+\+LOOTS}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921add9f05f752d26a956ab739306180cce0}{TOKEN\+\_\+\+RECURSIVE\+\_\+\+INGRED\+\_\+\+LIST}}\}
+\begin{DoxyCompactList}\small\item\em Syntax pattern for "{}\+Geralt loots"{} followed by ingredient list. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_aa06599e44f8894b2c39c80ccdf6599fa}{trade\+Action\+Vec}} = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\+\_\+\+GERALT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ae84b96a219fff1c7f896ffde0b5bdef1}{TOKEN\+\_\+\+TRADES}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab22295854d293957c20846046e392b11}{TOKEN\+\_\+\+RECURSIVE\+\_\+\+TROPHY\+\_\+\+LIST}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a7e98ef50ede50c435f049057d09fb9e6}{TOKEN\+\_\+\+TROPHY}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921aaca94097ec53cbcf93cdc0a493251040}{TOKEN\+\_\+\+FOR}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921add9f05f752d26a956ab739306180cce0}{TOKEN\+\_\+\+RECURSIVE\+\_\+\+INGRED\+\_\+\+LIST}}\}
+\begin{DoxyCompactList}\small\item\em Syntax pattern for "{}\+Geralt trades \mbox{[}trophies\mbox{]} for \mbox{[}ingredients\mbox{]}"{}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_ae8eeafd7baadf395bb1434a4e184eb6a}{brew\+Action\+Vec}} = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\+\_\+\+GERALT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3eabeb590825058a5115428ce9d27276}{TOKEN\+\_\+\+BREWS}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac2d61744f5ad364f373c41955c7b6c36}{TOKEN\+\_\+\+POTION\+\_\+\+NAME}}\}
+\begin{DoxyCompactList}\small\item\em Syntax pattern for "{}\+Geralt brews \mbox{[}potion\mbox{]}"{}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_a2cfab400211f23b5edb52018caa8f39e}{know\+Effec\+Sign\+Vec}}
+\begin{DoxyCompactList}\small\item\em Syntax for learning effectiveness of a sign. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_a5455e3a72e79cf83abdef8126c95acfa}{know\+Effec\+Pot\+Vec}}
+\begin{DoxyCompactList}\small\item\em Syntax for learning effectiveness of a potion. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_a3717bc353a2c46fd893dd9ebc09c66f7}{know\+Pot\+Formula\+Vec}}
+\begin{DoxyCompactList}\small\item\em Syntax for learning formula of a potion. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_a9cc8f71bf0e0b70007f88884b18f744e}{encounter\+Vec}} = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\+\_\+\+GERALT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921afe27d3b314c1fb083dac8e21b496b880}{TOKEN\+\_\+\+ENCOUNTERS}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a9fb117b9a3a962ef11e864cf4e47d841}{TOKEN\+\_\+A}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}{TOKEN\+\_\+\+WORD}}\}
+\begin{DoxyCompactList}\small\item\em Syntax for "{}\+Geralt encounters a \mbox{[}monster\mbox{]}"{}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_ab3e98793b4c5c624381320c0c6a0da7a}{total\+All\+Ingred\+Query\+Vec}} = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\+\_\+\+TOTAL}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acf2e7e2ebf005ddd4fa04fd56a2726a5}{TOKEN\+\_\+\+INGREDIENT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}
+\begin{DoxyCompactList}\small\item\em Syntax for querying total number of all ingredients. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_a2038a86582d13fcaf3555967a25f8c9a}{total\+All\+Pot\+Query\+Vec}} = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\+\_\+\+TOTAL}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a1ec9b236a7ba8d88b79b2eb155af279d}{TOKEN\+\_\+\+POTION\+\_\+\+KEYWORD}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}
+\begin{DoxyCompactList}\small\item\em Syntax for querying total number of all potions. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_abfdfff4f50008a5ddc52f0df67a0616d}{total\+All\+Trophy\+Query\+Vec}} = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\+\_\+\+TOTAL}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a7e98ef50ede50c435f049057d09fb9e6}{TOKEN\+\_\+\+TROPHY}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}
+\begin{DoxyCompactList}\small\item\em Syntax for querying total number of all trophies. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_a3ae4e1bdd3cfaf36befdd83ea74a054b}{total\+Spec\+Ingred\+Query\+Vec}} = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\+\_\+\+TOTAL}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acf2e7e2ebf005ddd4fa04fd56a2726a5}{TOKEN\+\_\+\+INGREDIENT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}{TOKEN\+\_\+\+WORD}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}
+\begin{DoxyCompactList}\small\item\em Syntax for querying total of a specific ingredient. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_af5cac15613b330b42acd3afff0ef07d6}{total\+Spec\+Pot\+Query\+Vec}} = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\+\_\+\+TOTAL}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a1ec9b236a7ba8d88b79b2eb155af279d}{TOKEN\+\_\+\+POTION\+\_\+\+KEYWORD}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac2d61744f5ad364f373c41955c7b6c36}{TOKEN\+\_\+\+POTION\+\_\+\+NAME}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}
+\begin{DoxyCompactList}\small\item\em Syntax for querying total of a specific potion. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_a65dface3d81fad7e999c7049935ef872}{total\+Spec\+Trophy\+Query\+Vec}} = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\+\_\+\+TOTAL}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a7e98ef50ede50c435f049057d09fb9e6}{TOKEN\+\_\+\+TROPHY}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}{TOKEN\+\_\+\+WORD}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}
+\begin{DoxyCompactList}\small\item\em Syntax for querying total of a specific trophy. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_a557b196921f001f64864f5ba4380a690}{bestiary\+Query\+Vec}} = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac07de5a2599015fa9504537b46ef1aa0}{TOKEN\+\_\+\+WHAT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a5ebaf8c36b5d84b1a717dfce0df266a8}{TOKEN\+\_\+\+IS}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3c1f25d2df6aa2a25445c690aa2cc07a}{TOKEN\+\_\+\+EFFECTIVE}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ad91c5d0049a9f69f67798f3147d832d6}{TOKEN\+\_\+\+AGAINST}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}{TOKEN\+\_\+\+WORD}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}
+\begin{DoxyCompactList}\small\item\em Syntax for bestiary query like "{}\+What is effective against \mbox{[}monster\mbox{]}?"{}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_a59b1628a0b7d295525748d8a1ac02bdf}{alch\+Query\+Vec}} = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac07de5a2599015fa9504537b46ef1aa0}{TOKEN\+\_\+\+WHAT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a5ebaf8c36b5d84b1a717dfce0df266a8}{TOKEN\+\_\+\+IS}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921aab6505c0fd8126a58622ad931de3ce86}{TOKEN\+\_\+\+IN}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac2d61744f5ad364f373c41955c7b6c36}{TOKEN\+\_\+\+POTION\+\_\+\+NAME}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}
+\begin{DoxyCompactList}\small\item\em Syntax for alchemy query like "{}\+What is in \mbox{[}potion\mbox{]}?"{}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{parser_8h_a2c58752ad1a36acebb4ce829bdd0446b}{exit\+Com\+Vec}} = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a650aa351dd41e13b3b1da2904051864e}{TOKEN\+\_\+\+EXIT}}\}
+\begin{DoxyCompactList}\small\item\em Syntax for exit command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines parser action types and their corresponding syntax rules (token patterns). 
+
+
+
+\label{doc-enum-members}
+\Hypertarget{parser_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02d}\index{parser.h@{parser.h}!ParserActionType@{ParserActionType}}
+\index{ParserActionType@{ParserActionType}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{ParserActionType}{ParserActionType}}
+{\footnotesize\ttfamily \label{parser_8h_a636ed658a751cd011a49381793a2a02d} 
+enum \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02d}{Parser\+Action\+Type}}}
+
+
+
+\texorpdfstring{$<$}{<} Required for \doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type} definitions 
+
+Enumerates all possible parser-\/level actions corresponding to valid syntactic commands.
+
+These enums map to different high-\/level commands that the parser supports, such as actions, learning statements, queries, and exit commands. They are used to match user input patterns with the appropriate syntax vector and function to execute. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOOT\_ACTION@{LOOT\_ACTION}!parser.h@{parser.h}}\index{parser.h@{parser.h}!LOOT\_ACTION@{LOOT\_ACTION}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02daba8203c6b17bf616140e336373a4a672}\label{parser_8h_a636ed658a751cd011a49381793a2a02daba8203c6b17bf616140e336373a4a672} 
+LOOT\+\_\+\+ACTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TRADE\_ACTION@{TRADE\_ACTION}!parser.h@{parser.h}}\index{parser.h@{parser.h}!TRADE\_ACTION@{TRADE\_ACTION}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02dab7d03b2c32d46b3ebfb061b72e4afbd9}\label{parser_8h_a636ed658a751cd011a49381793a2a02dab7d03b2c32d46b3ebfb061b72e4afbd9} 
+TRADE\+\_\+\+ACTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BREW\_ACTION@{BREW\_ACTION}!parser.h@{parser.h}}\index{parser.h@{parser.h}!BREW\_ACTION@{BREW\_ACTION}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02daf4ba1c812c84dda65be8b44f7bf430a2}\label{parser_8h_a636ed658a751cd011a49381793a2a02daf4ba1c812c84dda65be8b44f7bf430a2} 
+BREW\+\_\+\+ACTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KNOWLEDGE\_EFFECTIVENESS\_SIGN@{KNOWLEDGE\_EFFECTIVENESS\_SIGN}!parser.h@{parser.h}}\index{parser.h@{parser.h}!KNOWLEDGE\_EFFECTIVENESS\_SIGN@{KNOWLEDGE\_EFFECTIVENESS\_SIGN}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02daba75b3afe97029fe9fde18b877646f8f}\label{parser_8h_a636ed658a751cd011a49381793a2a02daba75b3afe97029fe9fde18b877646f8f} 
+KNOWLEDGE\+\_\+\+EFFECTIVENESS\+\_\+\+SIGN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KNOWLEDGE\_EFFECTIVENESS\_POTION@{KNOWLEDGE\_EFFECTIVENESS\_POTION}!parser.h@{parser.h}}\index{parser.h@{parser.h}!KNOWLEDGE\_EFFECTIVENESS\_POTION@{KNOWLEDGE\_EFFECTIVENESS\_POTION}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02da78b1ea9585f2683ae60d8f935608b00b}\label{parser_8h_a636ed658a751cd011a49381793a2a02da78b1ea9585f2683ae60d8f935608b00b} 
+KNOWLEDGE\+\_\+\+EFFECTIVENESS\+\_\+\+POTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KNOWLEDGE\_POTION\_FORMULA@{KNOWLEDGE\_POTION\_FORMULA}!parser.h@{parser.h}}\index{parser.h@{parser.h}!KNOWLEDGE\_POTION\_FORMULA@{KNOWLEDGE\_POTION\_FORMULA}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02dad4263a113e27e7d059b0ab66342d3f24}\label{parser_8h_a636ed658a751cd011a49381793a2a02dad4263a113e27e7d059b0ab66342d3f24} 
+KNOWLEDGE\+\_\+\+POTION\+\_\+\+FORMULA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENCOUNTER@{ENCOUNTER}!parser.h@{parser.h}}\index{parser.h@{parser.h}!ENCOUNTER@{ENCOUNTER}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02da9f93534eed94db541fa3c25728591555}\label{parser_8h_a636ed658a751cd011a49381793a2a02da9f93534eed94db541fa3c25728591555} 
+ENCOUNTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOTAL\_ALL\_INGREDIENT\_QUERY@{TOTAL\_ALL\_INGREDIENT\_QUERY}!parser.h@{parser.h}}\index{parser.h@{parser.h}!TOTAL\_ALL\_INGREDIENT\_QUERY@{TOTAL\_ALL\_INGREDIENT\_QUERY}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02daeb4af02d145b8bedfb1e51c7c7057103}\label{parser_8h_a636ed658a751cd011a49381793a2a02daeb4af02d145b8bedfb1e51c7c7057103} 
+TOTAL\+\_\+\+ALL\+\_\+\+INGREDIENT\+\_\+\+QUERY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOTAL\_ALL\_POTION\_QUERY@{TOTAL\_ALL\_POTION\_QUERY}!parser.h@{parser.h}}\index{parser.h@{parser.h}!TOTAL\_ALL\_POTION\_QUERY@{TOTAL\_ALL\_POTION\_QUERY}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02da3725955518e9656ad2e6c7416d701bb7}\label{parser_8h_a636ed658a751cd011a49381793a2a02da3725955518e9656ad2e6c7416d701bb7} 
+TOTAL\+\_\+\+ALL\+\_\+\+POTION\+\_\+\+QUERY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOTAL\_ALL\_TROPHY\_QUERY@{TOTAL\_ALL\_TROPHY\_QUERY}!parser.h@{parser.h}}\index{parser.h@{parser.h}!TOTAL\_ALL\_TROPHY\_QUERY@{TOTAL\_ALL\_TROPHY\_QUERY}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02da5db0e0c75f2144b03f29d5e7993ef48d}\label{parser_8h_a636ed658a751cd011a49381793a2a02da5db0e0c75f2144b03f29d5e7993ef48d} 
+TOTAL\+\_\+\+ALL\+\_\+\+TROPHY\+\_\+\+QUERY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOTAL\_SPECIFIC\_INGREDIENT\_QUERY@{TOTAL\_SPECIFIC\_INGREDIENT\_QUERY}!parser.h@{parser.h}}\index{parser.h@{parser.h}!TOTAL\_SPECIFIC\_INGREDIENT\_QUERY@{TOTAL\_SPECIFIC\_INGREDIENT\_QUERY}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02dac09d1bf484ca7e2aca84af3a1746feab}\label{parser_8h_a636ed658a751cd011a49381793a2a02dac09d1bf484ca7e2aca84af3a1746feab} 
+TOTAL\+\_\+\+SPECIFIC\+\_\+\+INGREDIENT\+\_\+\+QUERY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOTAL\_SPECIFIC\_POTION\_QUERY@{TOTAL\_SPECIFIC\_POTION\_QUERY}!parser.h@{parser.h}}\index{parser.h@{parser.h}!TOTAL\_SPECIFIC\_POTION\_QUERY@{TOTAL\_SPECIFIC\_POTION\_QUERY}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02da561d557e0ec9cfa0c7fb984b9e4e4326}\label{parser_8h_a636ed658a751cd011a49381793a2a02da561d557e0ec9cfa0c7fb984b9e4e4326} 
+TOTAL\+\_\+\+SPECIFIC\+\_\+\+POTION\+\_\+\+QUERY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOTAL\_SPECIFIC\_TROPHY\_QUERY@{TOTAL\_SPECIFIC\_TROPHY\_QUERY}!parser.h@{parser.h}}\index{parser.h@{parser.h}!TOTAL\_SPECIFIC\_TROPHY\_QUERY@{TOTAL\_SPECIFIC\_TROPHY\_QUERY}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02da5af9772b366fcb7cdb23431ca508a4ac}\label{parser_8h_a636ed658a751cd011a49381793a2a02da5af9772b366fcb7cdb23431ca508a4ac} 
+TOTAL\+\_\+\+SPECIFIC\+\_\+\+TROPHY\+\_\+\+QUERY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BESTIARY\_QUERY@{BESTIARY\_QUERY}!parser.h@{parser.h}}\index{parser.h@{parser.h}!BESTIARY\_QUERY@{BESTIARY\_QUERY}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02da8d69a4c5d7cd4f64693ca704166c8365}\label{parser_8h_a636ed658a751cd011a49381793a2a02da8d69a4c5d7cd4f64693ca704166c8365} 
+BESTIARY\+\_\+\+QUERY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALCHEMY\_QUERY@{ALCHEMY\_QUERY}!parser.h@{parser.h}}\index{parser.h@{parser.h}!ALCHEMY\_QUERY@{ALCHEMY\_QUERY}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02da0390b0f3325f73582c5197003a264c7c}\label{parser_8h_a636ed658a751cd011a49381793a2a02da0390b0f3325f73582c5197003a264c7c} 
+ALCHEMY\+\_\+\+QUERY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXIT\_COMMAND@{EXIT\_COMMAND}!parser.h@{parser.h}}\index{parser.h@{parser.h}!EXIT\_COMMAND@{EXIT\_COMMAND}}}\Hypertarget{parser_8h_a636ed658a751cd011a49381793a2a02da6806f6a7a0c0b62e7c8c467e490721a8}\label{parser_8h_a636ed658a751cd011a49381793a2a02da6806f6a7a0c0b62e7c8c467e490721a8} 
+EXIT\+\_\+\+COMMAND&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-var-members}
+\Hypertarget{parser_8h_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{parser_8h_a59b1628a0b7d295525748d8a1ac02bdf}\index{parser.h@{parser.h}!alchQueryVec@{alchQueryVec}}
+\index{alchQueryVec@{alchQueryVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{alchQueryVec}{alchQueryVec}}
+{\footnotesize\ttfamily \label{parser_8h_a59b1628a0b7d295525748d8a1ac02bdf} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ alch\+Query\+Vec = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac07de5a2599015fa9504537b46ef1aa0}{TOKEN\+\_\+\+WHAT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a5ebaf8c36b5d84b1a717dfce0df266a8}{TOKEN\+\_\+\+IS}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921aab6505c0fd8126a58622ad931de3ce86}{TOKEN\+\_\+\+IN}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac2d61744f5ad364f373c41955c7b6c36}{TOKEN\+\_\+\+POTION\+\_\+\+NAME}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}}
+
+
+
+Syntax for alchemy query like "{}\+What is in \mbox{[}potion\mbox{]}?"{}. 
+
+\Hypertarget{parser_8h_a557b196921f001f64864f5ba4380a690}\index{parser.h@{parser.h}!bestiaryQueryVec@{bestiaryQueryVec}}
+\index{bestiaryQueryVec@{bestiaryQueryVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{bestiaryQueryVec}{bestiaryQueryVec}}
+{\footnotesize\ttfamily \label{parser_8h_a557b196921f001f64864f5ba4380a690} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ bestiary\+Query\+Vec = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac07de5a2599015fa9504537b46ef1aa0}{TOKEN\+\_\+\+WHAT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a5ebaf8c36b5d84b1a717dfce0df266a8}{TOKEN\+\_\+\+IS}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3c1f25d2df6aa2a25445c690aa2cc07a}{TOKEN\+\_\+\+EFFECTIVE}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ad91c5d0049a9f69f67798f3147d832d6}{TOKEN\+\_\+\+AGAINST}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}{TOKEN\+\_\+\+WORD}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}}
+
+
+
+Syntax for bestiary query like "{}\+What is effective against \mbox{[}monster\mbox{]}?"{}. 
+
+\Hypertarget{parser_8h_ae8eeafd7baadf395bb1434a4e184eb6a}\index{parser.h@{parser.h}!brewActionVec@{brewActionVec}}
+\index{brewActionVec@{brewActionVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{brewActionVec}{brewActionVec}}
+{\footnotesize\ttfamily \label{parser_8h_ae8eeafd7baadf395bb1434a4e184eb6a} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ brew\+Action\+Vec = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\+\_\+\+GERALT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3eabeb590825058a5115428ce9d27276}{TOKEN\+\_\+\+BREWS}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac2d61744f5ad364f373c41955c7b6c36}{TOKEN\+\_\+\+POTION\+\_\+\+NAME}}\}}
+
+
+
+Syntax pattern for "{}\+Geralt brews \mbox{[}potion\mbox{]}"{}. 
+
+\Hypertarget{parser_8h_a9cc8f71bf0e0b70007f88884b18f744e}\index{parser.h@{parser.h}!encounterVec@{encounterVec}}
+\index{encounterVec@{encounterVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{encounterVec}{encounterVec}}
+{\footnotesize\ttfamily \label{parser_8h_a9cc8f71bf0e0b70007f88884b18f744e} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ encounter\+Vec = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\+\_\+\+GERALT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921afe27d3b314c1fb083dac8e21b496b880}{TOKEN\+\_\+\+ENCOUNTERS}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a9fb117b9a3a962ef11e864cf4e47d841}{TOKEN\+\_\+A}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}{TOKEN\+\_\+\+WORD}}\}}
+
+
+
+Syntax for "{}\+Geralt encounters a \mbox{[}monster\mbox{]}"{}. 
+
+\Hypertarget{parser_8h_a2c58752ad1a36acebb4ce829bdd0446b}\index{parser.h@{parser.h}!exitComVec@{exitComVec}}
+\index{exitComVec@{exitComVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{exitComVec}{exitComVec}}
+{\footnotesize\ttfamily \label{parser_8h_a2c58752ad1a36acebb4ce829bdd0446b} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ exit\+Com\+Vec = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a650aa351dd41e13b3b1da2904051864e}{TOKEN\+\_\+\+EXIT}}\}}
+
+
+
+Syntax for exit command. 
+
+\Hypertarget{parser_8h_a5455e3a72e79cf83abdef8126c95acfa}\index{parser.h@{parser.h}!knowEffecPotVec@{knowEffecPotVec}}
+\index{knowEffecPotVec@{knowEffecPotVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{knowEffecPotVec}{knowEffecPotVec}}
+{\footnotesize\ttfamily \label{parser_8h_a5455e3a72e79cf83abdef8126c95acfa} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ know\+Effec\+Pot\+Vec}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\_GERALT}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac823d7446ca13d9db0681a5114d5992c}{TOKEN\_LEARNS}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac2d61744f5ad364f373c41955c7b6c36}{TOKEN\_POTION\_NAME}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a1ec9b236a7ba8d88b79b2eb155af279d}{TOKEN\_POTION\_KEYWORD}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a5ebaf8c36b5d84b1a717dfce0df266a8}{TOKEN\_IS}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3c1f25d2df6aa2a25445c690aa2cc07a}{TOKEN\_EFFECTIVE}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ad91c5d0049a9f69f67798f3147d832d6}{TOKEN\_AGAINST}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}{TOKEN\_WORD}}\}}
+
+\end{DoxyCode}
+
+
+Syntax for learning effectiveness of a potion. 
+
+\Hypertarget{parser_8h_a2cfab400211f23b5edb52018caa8f39e}\index{parser.h@{parser.h}!knowEffecSignVec@{knowEffecSignVec}}
+\index{knowEffecSignVec@{knowEffecSignVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{knowEffecSignVec}{knowEffecSignVec}}
+{\footnotesize\ttfamily \label{parser_8h_a2cfab400211f23b5edb52018caa8f39e} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ know\+Effec\+Sign\+Vec}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\_GERALT}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac823d7446ca13d9db0681a5114d5992c}{TOKEN\_LEARNS}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}{TOKEN\_WORD}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a6d30eb7f3a89b6b48770e32a58a725f8}{TOKEN\_SIGN\_KEYWORD}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a5ebaf8c36b5d84b1a717dfce0df266a8}{TOKEN\_IS}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3c1f25d2df6aa2a25445c690aa2cc07a}{TOKEN\_EFFECTIVE}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ad91c5d0049a9f69f67798f3147d832d6}{TOKEN\_AGAINST}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}{TOKEN\_WORD}}\}}
+
+\end{DoxyCode}
+
+
+Syntax for learning effectiveness of a sign. 
+
+\Hypertarget{parser_8h_a3717bc353a2c46fd893dd9ebc09c66f7}\index{parser.h@{parser.h}!knowPotFormulaVec@{knowPotFormulaVec}}
+\index{knowPotFormulaVec@{knowPotFormulaVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{knowPotFormulaVec}{knowPotFormulaVec}}
+{\footnotesize\ttfamily \label{parser_8h_a3717bc353a2c46fd893dd9ebc09c66f7} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ know\+Pot\+Formula\+Vec}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\_GERALT}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac823d7446ca13d9db0681a5114d5992c}{TOKEN\_LEARNS}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac2d61744f5ad364f373c41955c7b6c36}{TOKEN\_POTION\_NAME}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a1ec9b236a7ba8d88b79b2eb155af279d}{TOKEN\_POTION\_KEYWORD}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab9788f2b7a87614ebe2fdd8432a7ecfd}{TOKEN\_CONSISTS}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acce74aba75acd3b25deb2e163b9920e9}{TOKEN\_OF}},\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921add9f05f752d26a956ab739306180cce0}{TOKEN\_RECURSIVE\_INGRED\_LIST}}\}}
+
+\end{DoxyCode}
+
+
+Syntax for learning formula of a potion. 
+
+\Hypertarget{parser_8h_aee294cf913fc698d7416b397a56fb4c0}\index{parser.h@{parser.h}!lootActionVec@{lootActionVec}}
+\index{lootActionVec@{lootActionVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{lootActionVec}{lootActionVec}}
+{\footnotesize\ttfamily \label{parser_8h_aee294cf913fc698d7416b397a56fb4c0} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ loot\+Action\+Vec = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\+\_\+\+GERALT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3fae50190858a4171ed2b22b99a5ab2c}{TOKEN\+\_\+\+LOOTS}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921add9f05f752d26a956ab739306180cce0}{TOKEN\+\_\+\+RECURSIVE\+\_\+\+INGRED\+\_\+\+LIST}}\}}
+
+
+
+Syntax pattern for "{}\+Geralt loots"{} followed by ingredient list. 
+
+\Hypertarget{parser_8h_ab3e98793b4c5c624381320c0c6a0da7a}\index{parser.h@{parser.h}!totalAllIngredQueryVec@{totalAllIngredQueryVec}}
+\index{totalAllIngredQueryVec@{totalAllIngredQueryVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{totalAllIngredQueryVec}{totalAllIngredQueryVec}}
+{\footnotesize\ttfamily \label{parser_8h_ab3e98793b4c5c624381320c0c6a0da7a} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ total\+All\+Ingred\+Query\+Vec = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\+\_\+\+TOTAL}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acf2e7e2ebf005ddd4fa04fd56a2726a5}{TOKEN\+\_\+\+INGREDIENT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}}
+
+
+
+Syntax for querying total number of all ingredients. 
+
+\Hypertarget{parser_8h_a2038a86582d13fcaf3555967a25f8c9a}\index{parser.h@{parser.h}!totalAllPotQueryVec@{totalAllPotQueryVec}}
+\index{totalAllPotQueryVec@{totalAllPotQueryVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{totalAllPotQueryVec}{totalAllPotQueryVec}}
+{\footnotesize\ttfamily \label{parser_8h_a2038a86582d13fcaf3555967a25f8c9a} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ total\+All\+Pot\+Query\+Vec = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\+\_\+\+TOTAL}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a1ec9b236a7ba8d88b79b2eb155af279d}{TOKEN\+\_\+\+POTION\+\_\+\+KEYWORD}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}}
+
+
+
+Syntax for querying total number of all potions. 
+
+\Hypertarget{parser_8h_abfdfff4f50008a5ddc52f0df67a0616d}\index{parser.h@{parser.h}!totalAllTrophyQueryVec@{totalAllTrophyQueryVec}}
+\index{totalAllTrophyQueryVec@{totalAllTrophyQueryVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{totalAllTrophyQueryVec}{totalAllTrophyQueryVec}}
+{\footnotesize\ttfamily \label{parser_8h_abfdfff4f50008a5ddc52f0df67a0616d} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ total\+All\+Trophy\+Query\+Vec = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\+\_\+\+TOTAL}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a7e98ef50ede50c435f049057d09fb9e6}{TOKEN\+\_\+\+TROPHY}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}}
+
+
+
+Syntax for querying total number of all trophies. 
+
+\Hypertarget{parser_8h_a3ae4e1bdd3cfaf36befdd83ea74a054b}\index{parser.h@{parser.h}!totalSpecIngredQueryVec@{totalSpecIngredQueryVec}}
+\index{totalSpecIngredQueryVec@{totalSpecIngredQueryVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{totalSpecIngredQueryVec}{totalSpecIngredQueryVec}}
+{\footnotesize\ttfamily \label{parser_8h_a3ae4e1bdd3cfaf36befdd83ea74a054b} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ total\+Spec\+Ingred\+Query\+Vec = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\+\_\+\+TOTAL}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acf2e7e2ebf005ddd4fa04fd56a2726a5}{TOKEN\+\_\+\+INGREDIENT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}{TOKEN\+\_\+\+WORD}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}}
+
+
+
+Syntax for querying total of a specific ingredient. 
+
+\Hypertarget{parser_8h_af5cac15613b330b42acd3afff0ef07d6}\index{parser.h@{parser.h}!totalSpecPotQueryVec@{totalSpecPotQueryVec}}
+\index{totalSpecPotQueryVec@{totalSpecPotQueryVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{totalSpecPotQueryVec}{totalSpecPotQueryVec}}
+{\footnotesize\ttfamily \label{parser_8h_af5cac15613b330b42acd3afff0ef07d6} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ total\+Spec\+Pot\+Query\+Vec = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\+\_\+\+TOTAL}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a1ec9b236a7ba8d88b79b2eb155af279d}{TOKEN\+\_\+\+POTION\+\_\+\+KEYWORD}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac2d61744f5ad364f373c41955c7b6c36}{TOKEN\+\_\+\+POTION\+\_\+\+NAME}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}}
+
+
+
+Syntax for querying total of a specific potion. 
+
+\Hypertarget{parser_8h_a65dface3d81fad7e999c7049935ef872}\index{parser.h@{parser.h}!totalSpecTrophyQueryVec@{totalSpecTrophyQueryVec}}
+\index{totalSpecTrophyQueryVec@{totalSpecTrophyQueryVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{totalSpecTrophyQueryVec}{totalSpecTrophyQueryVec}}
+{\footnotesize\ttfamily \label{parser_8h_a65dface3d81fad7e999c7049935ef872} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ total\+Spec\+Trophy\+Query\+Vec = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\+\_\+\+TOTAL}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a7e98ef50ede50c435f049057d09fb9e6}{TOKEN\+\_\+\+TROPHY}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}{TOKEN\+\_\+\+WORD}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}\}}
+
+
+
+Syntax for querying total of a specific trophy. 
+
+\Hypertarget{parser_8h_aa06599e44f8894b2c39c80ccdf6599fa}\index{parser.h@{parser.h}!tradeActionVec@{tradeActionVec}}
+\index{tradeActionVec@{tradeActionVec}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{tradeActionVec}{tradeActionVec}}
+{\footnotesize\ttfamily \label{parser_8h_aa06599e44f8894b2c39c80ccdf6599fa} 
+std\+::vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ trade\+Action\+Vec = \{\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\+\_\+\+GERALT}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ae84b96a219fff1c7f896ffde0b5bdef1}{TOKEN\+\_\+\+TRADES}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab22295854d293957c20846046e392b11}{TOKEN\+\_\+\+RECURSIVE\+\_\+\+TROPHY\+\_\+\+LIST}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a7e98ef50ede50c435f049057d09fb9e6}{TOKEN\+\_\+\+TROPHY}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921aaca94097ec53cbcf93cdc0a493251040}{TOKEN\+\_\+\+FOR}}, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921add9f05f752d26a956ab739306180cce0}{TOKEN\+\_\+\+RECURSIVE\+\_\+\+INGRED\+\_\+\+LIST}}\}}
+
+
+
+Syntax pattern for "{}\+Geralt trades \mbox{[}trophies\mbox{]} for \mbox{[}ingredients\mbox{]}"{}. 
+

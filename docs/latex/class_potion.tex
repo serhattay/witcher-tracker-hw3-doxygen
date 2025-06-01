@@ -1,0 +1,163 @@
+\doxysection{Potion Class Reference}
+\hypertarget{class_potion}{}\label{class_potion}\index{Potion@{Potion}}
+
+
+This class acts as a blueprint for the \doxylink{class_potion}{Potion} object which stores the potion\textquotesingle{}s name, quantity and the formula for that potion.  
+
+
+
+
+{\ttfamily \#include $<$potion.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_potion_a183ed20184da0356771648f241e6ef6d}{Potion}} (const string \&name)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{class_potion}{Potion}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_potion_ae28d423b1bc62b7306d2e60c2fa1bf23}{get\+Quantity}} ()
+\begin{DoxyCompactList}\small\item\em Get current quantity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_potion_abc52b05b89f916a1023d6aabb66e1e20}{increase\+Quantity}} (int amount)
+\begin{DoxyCompactList}\small\item\em Increase quantity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_potion_a1ea80c8dc4d45cdf08d586e64dac86a2}{decrease\+Quantity}} (int amount)
+\begin{DoxyCompactList}\small\item\em Decrease quantity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_potion_ab80630bb2ae02c49f293267b61f14cd0}{is\+Formula\+Defined}} ()
+\begin{DoxyCompactList}\small\item\em Check if formula is defined. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_potion_a76540dcea46dbe8d33267365befb430b}{define\+Formula}} ()
+\begin{DoxyCompactList}\small\item\em Mark formula as defined. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_potion_a9ae9e6bec59fe74ef311f32579620a3d}{add\+To\+Formula}} (int quantity, const string \&ingredient\+Name)
+\begin{DoxyCompactList}\small\item\em Add ingredient to formula. \end{DoxyCompactList}\item 
+const vector$<$ pair$<$ string, int $>$ $>$ \& \mbox{\hyperlink{class_potion_a288ba12a892b440b0aeb3e8f68c662ac}{get\+Formula}} ()
+\begin{DoxyCompactList}\small\item\em Get formula. \end{DoxyCompactList}\item 
+const vector$<$ pair$<$ string, int $>$ $>$ \& \mbox{\hyperlink{class_potion_a8a57db7c01ecfe840345c4f6239c4c40}{get\+Sorted\+Formula}} ()
+\begin{DoxyCompactList}\small\item\em Get sorted formula. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class acts as a blueprint for the \doxylink{class_potion}{Potion} object which stores the potion\textquotesingle{}s name, quantity and the formula for that potion. 
+
+\label{doc-constructors}
+\Hypertarget{class_potion_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_potion_a183ed20184da0356771648f241e6ef6d}\index{Potion@{Potion}!Potion@{Potion}}
+\index{Potion@{Potion}!Potion@{Potion}}
+\doxysubsubsection{\texorpdfstring{Potion()}{Potion()}}
+{\footnotesize\ttfamily \label{class_potion_a183ed20184da0356771648f241e6ef6d} 
+Potion\+::\+Potion (\begin{DoxyParamCaption}\item[{const string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{class_potion}{Potion}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \doxylink{class_potion}{Potion} name. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_potion_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_potion_a9ae9e6bec59fe74ef311f32579620a3d}\index{Potion@{Potion}!addToFormula@{addToFormula}}
+\index{addToFormula@{addToFormula}!Potion@{Potion}}
+\doxysubsubsection{\texorpdfstring{addToFormula()}{addToFormula()}}
+{\footnotesize\ttfamily \label{class_potion_a9ae9e6bec59fe74ef311f32579620a3d} 
+void Potion\+::add\+To\+Formula (\begin{DoxyParamCaption}\item[{int}]{quantity}{, }\item[{const string \&}]{ingredient\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Add ingredient to formula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & Amount required. \\
+\hline
+{\em ingredient\+Name} & \doxylink{class_ingredient}{Ingredient} name. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_potion_a1ea80c8dc4d45cdf08d586e64dac86a2}\index{Potion@{Potion}!decreaseQuantity@{decreaseQuantity}}
+\index{decreaseQuantity@{decreaseQuantity}!Potion@{Potion}}
+\doxysubsubsection{\texorpdfstring{decreaseQuantity()}{decreaseQuantity()}}
+{\footnotesize\ttfamily \label{class_potion_a1ea80c8dc4d45cdf08d586e64dac86a2} 
+void Potion\+::decrease\+Quantity (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Decrease quantity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount to subtract. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_potion_a76540dcea46dbe8d33267365befb430b}\index{Potion@{Potion}!defineFormula@{defineFormula}}
+\index{defineFormula@{defineFormula}!Potion@{Potion}}
+\doxysubsubsection{\texorpdfstring{defineFormula()}{defineFormula()}}
+{\footnotesize\ttfamily \label{class_potion_a76540dcea46dbe8d33267365befb430b} 
+void Potion\+::define\+Formula (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Mark formula as defined. 
+
+\Hypertarget{class_potion_a288ba12a892b440b0aeb3e8f68c662ac}\index{Potion@{Potion}!getFormula@{getFormula}}
+\index{getFormula@{getFormula}!Potion@{Potion}}
+\doxysubsubsection{\texorpdfstring{getFormula()}{getFormula()}}
+{\footnotesize\ttfamily \label{class_potion_a288ba12a892b440b0aeb3e8f68c662ac} 
+const vector$<$ pair$<$ string, int $>$ $>$ \& Potion\+::get\+Formula (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get formula. 
+
+\Hypertarget{class_potion_ae28d423b1bc62b7306d2e60c2fa1bf23}\index{Potion@{Potion}!getQuantity@{getQuantity}}
+\index{getQuantity@{getQuantity}!Potion@{Potion}}
+\doxysubsubsection{\texorpdfstring{getQuantity()}{getQuantity()}}
+{\footnotesize\ttfamily \label{class_potion_ae28d423b1bc62b7306d2e60c2fa1bf23} 
+int Potion\+::get\+Quantity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get current quantity. 
+
+\Hypertarget{class_potion_a8a57db7c01ecfe840345c4f6239c4c40}\index{Potion@{Potion}!getSortedFormula@{getSortedFormula}}
+\index{getSortedFormula@{getSortedFormula}!Potion@{Potion}}
+\doxysubsubsection{\texorpdfstring{getSortedFormula()}{getSortedFormula()}}
+{\footnotesize\ttfamily \label{class_potion_a8a57db7c01ecfe840345c4f6239c4c40} 
+const vector$<$ pair$<$ string, int $>$ $>$ \& Potion\+::get\+Sorted\+Formula (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get sorted formula. 
+
+\Hypertarget{class_potion_abc52b05b89f916a1023d6aabb66e1e20}\index{Potion@{Potion}!increaseQuantity@{increaseQuantity}}
+\index{increaseQuantity@{increaseQuantity}!Potion@{Potion}}
+\doxysubsubsection{\texorpdfstring{increaseQuantity()}{increaseQuantity()}}
+{\footnotesize\ttfamily \label{class_potion_abc52b05b89f916a1023d6aabb66e1e20} 
+void Potion\+::increase\+Quantity (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Increase quantity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_potion_ab80630bb2ae02c49f293267b61f14cd0}\index{Potion@{Potion}!isFormulaDefined@{isFormulaDefined}}
+\index{isFormulaDefined@{isFormulaDefined}!Potion@{Potion}}
+\doxysubsubsection{\texorpdfstring{isFormulaDefined()}{isFormulaDefined()}}
+{\footnotesize\ttfamily \label{class_potion_ab80630bb2ae02c49f293267b61f14cd0} 
+bool Potion\+::is\+Formula\+Defined (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check if formula is defined. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{potion_8h}{potion.\+h}}\item 
+src/\mbox{\hyperlink{potion_8cpp}{potion.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,69 @@
+\doxysection{tokenizer.\+h}
+\hypertarget{tokenizer_8h_source}{}\label{tokenizer_8h_source}\index{src/tokenizer.h@{src/tokenizer.h}}
+\mbox{\hyperlink{tokenizer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ TOKENIZER\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ TOKENIZER\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\_GERALT}}\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a4b89281f9efe05d6c61dc5d93df627f8}{TOKEN\_ACTION}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac823d7446ca13d9db0681a5114d5992c}{TOKEN\_LEARNS}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921afe27d3b314c1fb083dac8e21b496b880}{TOKEN\_ENCOUNTERS}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acf8d2a2f07a76827071ff34ca642a4ad}{TOKEN\_QUANTITY}}\ =\ 4,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}{TOKEN\_WORD}}\ =\ 5,\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a8d265e17914bc733c8b9a880dd097a9e}{TOKEN\_COMMA}}\ =\ 6,\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\_QMARK}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a7e98ef50ede50c435f049057d09fb9e6}{TOKEN\_TROPHY}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a6d30eb7f3a89b6b48770e32a58a725f8}{TOKEN\_SIGN\_KEYWORD}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a1ec9b236a7ba8d88b79b2eb155af279d}{TOKEN\_POTION\_KEYWORD}}\ =\ 10,\ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921aaca94097ec53cbcf93cdc0a493251040}{TOKEN\_FOR}}\ =\ 11,\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a5ebaf8c36b5d84b1a717dfce0df266a8}{TOKEN\_IS}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3c1f25d2df6aa2a25445c690aa2cc07a}{TOKEN\_EFFECTIVE}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ad91c5d0049a9f69f67798f3147d832d6}{TOKEN\_AGAINST}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab9788f2b7a87614ebe2fdd8432a7ecfd}{TOKEN\_CONSISTS}}\ =\ 15,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acce74aba75acd3b25deb2e163b9920e9}{TOKEN\_OF}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab50d5fce257ff698ccb513fd378837d9}{TOKEN\_SINGLE\_SPACE}}\ =\ 17,\ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af32967c744072002b856e893636f6bb6}{TOKEN\_MULTIPLE\_SPACE}}\ =\ 18,\ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a650aa351dd41e13b3b1da2904051864e}{TOKEN\_EXIT}}\ =\ 19,\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921afce962973d43f02103e9fc4e8cc2710e}{TOKEN\_MULTI\_WORD}}\ =\ 20,}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac07de5a2599015fa9504537b46ef1aa0}{TOKEN\_WHAT}}\ =\ 21,\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921aab6505c0fd8126a58622ad931de3ce86}{TOKEN\_IN}}\ =\ 22,\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a9fb117b9a3a962ef11e864cf4e47d841}{TOKEN\_A}}\ =\ 23,}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acf2e7e2ebf005ddd4fa04fd56a2726a5}{TOKEN\_INGREDIENT}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\_TOTAL}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a4e9a7212ea985c5ffdbf0080c464cc88}{TOKEN\_UNDEFINED}}\ =\ 26,}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ Below\ are\ parser-\/only\ values}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3fae50190858a4171ed2b22b99a5ab2c}{TOKEN\_LOOTS}}\ =\ 27,}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ae84b96a219fff1c7f896ffde0b5bdef1}{TOKEN\_TRADES}},}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3eabeb590825058a5115428ce9d27276}{TOKEN\_BREWS}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac2d61744f5ad364f373c41955c7b6c36}{TOKEN\_POTION\_NAME}}\ =\ 30,}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921add9f05f752d26a956ab739306180cce0}{TOKEN\_RECURSIVE\_INGRED\_LIST}}\ =\ 31,}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab22295854d293957c20846046e392b11}{TOKEN\_RECURSIVE\_TROPHY\_LIST}}\ =\ 32}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \}\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{TokenType}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{extern}\ std::unordered\_map<std::string,\ TokenType>\ \mbox{\hyperlink{token_8cpp_a655fc5d8a874c7b22f7ee4fa989f057d}{keyMap}};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOKENIZER\_H}}
+
+\end{DoxyCode}

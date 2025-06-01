@@ -1,0 +1,30 @@
+\doxysection{src/geralt.h File Reference}
+\hypertarget{geralt_8h}{}\label{geralt_8h}\index{src/geralt.h@{src/geralt.h}}
+
+
+Defines the methods and the data fields of the inventory.  
+
+
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include "{}ingredient.\+h"{}}\newline
+{\ttfamily \#include "{}potion.\+h"{}}\newline
+{\ttfamily \#include "{}sign.\+h"{}}\newline
+{\ttfamily \#include "{}monster.\+h"{}}\newline
+{\ttfamily \#include "{}trophy.\+h"{}}\newline
+{\ttfamily \#include "{}token.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_geralt}{Geralt}}
+\begin{DoxyCompactList}\small\item\em Class that represents the Witcher’s knowledge and inventory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the methods and the data fields of the inventory. 
+
+The class stores four static maps that model Geralt’s inventory, bestiary and trophies, and offers high-\/level actions that correspond to the grammar rules.
+
+Every method accepts a tokenized command line and either mutates the shared state or prints the answer required by the specification. 

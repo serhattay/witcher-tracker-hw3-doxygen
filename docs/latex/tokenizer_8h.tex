@@ -1,0 +1,243 @@
+\doxysection{src/tokenizer.h File Reference}
+\hypertarget{tokenizer_8h}{}\label{tokenizer_8h}\index{src/tokenizer.h@{src/tokenizer.h}}
+
+
+Defines the \doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type} enumeration used to classify lexical tokens.  
+
+
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \{ \newline
+\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\+\_\+\+GERALT}} = 0
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a4b89281f9efe05d6c61dc5d93df627f8}{TOKEN\+\_\+\+ACTION}}
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac823d7446ca13d9db0681a5114d5992c}{TOKEN\+\_\+\+LEARNS}}
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921afe27d3b314c1fb083dac8e21b496b880}{TOKEN\+\_\+\+ENCOUNTERS}}
+, \newline
+\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acf8d2a2f07a76827071ff34ca642a4ad}{TOKEN\+\_\+\+QUANTITY}} = 4
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}{TOKEN\+\_\+\+WORD}} = 5
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a8d265e17914bc733c8b9a880dd097a9e}{TOKEN\+\_\+\+COMMA}} = 6
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}{TOKEN\+\_\+\+QMARK}}
+, \newline
+\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a7e98ef50ede50c435f049057d09fb9e6}{TOKEN\+\_\+\+TROPHY}}
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a6d30eb7f3a89b6b48770e32a58a725f8}{TOKEN\+\_\+\+SIGN\+\_\+\+KEYWORD}}
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a1ec9b236a7ba8d88b79b2eb155af279d}{TOKEN\+\_\+\+POTION\+\_\+\+KEYWORD}} = 10
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921aaca94097ec53cbcf93cdc0a493251040}{TOKEN\+\_\+\+FOR}} = 11
+, \newline
+\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a5ebaf8c36b5d84b1a717dfce0df266a8}{TOKEN\+\_\+\+IS}}
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3c1f25d2df6aa2a25445c690aa2cc07a}{TOKEN\+\_\+\+EFFECTIVE}}
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ad91c5d0049a9f69f67798f3147d832d6}{TOKEN\+\_\+\+AGAINST}}
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab9788f2b7a87614ebe2fdd8432a7ecfd}{TOKEN\+\_\+\+CONSISTS}} = 15
+, \newline
+\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acce74aba75acd3b25deb2e163b9920e9}{TOKEN\+\_\+\+OF}}
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab50d5fce257ff698ccb513fd378837d9}{TOKEN\+\_\+\+SINGLE\+\_\+\+SPACE}} = 17
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af32967c744072002b856e893636f6bb6}{TOKEN\+\_\+\+MULTIPLE\+\_\+\+SPACE}} = 18
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a650aa351dd41e13b3b1da2904051864e}{TOKEN\+\_\+\+EXIT}} = 19
+, \newline
+\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921afce962973d43f02103e9fc4e8cc2710e}{TOKEN\+\_\+\+MULTI\+\_\+\+WORD}} = 20
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac07de5a2599015fa9504537b46ef1aa0}{TOKEN\+\_\+\+WHAT}} = 21
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921aab6505c0fd8126a58622ad931de3ce86}{TOKEN\+\_\+\+IN}} = 22
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a9fb117b9a3a962ef11e864cf4e47d841}{TOKEN\+\_\+A}} = 23
+, \newline
+\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acf2e7e2ebf005ddd4fa04fd56a2726a5}{TOKEN\+\_\+\+INGREDIENT}}
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}{TOKEN\+\_\+\+TOTAL}}
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a4e9a7212ea985c5ffdbf0080c464cc88}{TOKEN\+\_\+\+UNDEFINED}} = 26
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3fae50190858a4171ed2b22b99a5ab2c}{TOKEN\+\_\+\+LOOTS}} = 27
+, \newline
+\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ae84b96a219fff1c7f896ffde0b5bdef1}{TOKEN\+\_\+\+TRADES}}
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3eabeb590825058a5115428ce9d27276}{TOKEN\+\_\+\+BREWS}}
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac2d61744f5ad364f373c41955c7b6c36}{TOKEN\+\_\+\+POTION\+\_\+\+NAME}} = 30
+, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921add9f05f752d26a956ab739306180cce0}{TOKEN\+\_\+\+RECURSIVE\+\_\+\+INGRED\+\_\+\+LIST}} = 31
+, \newline
+\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab22295854d293957c20846046e392b11}{TOKEN\+\_\+\+RECURSIVE\+\_\+\+TROPHY\+\_\+\+LIST}} = 32
+ \}
+\begin{DoxyCompactList}\small\item\em Represents all possible types of tokens identified during lexical analysis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ \mbox{\hyperlink{tokenizer_8h_a655fc5d8a874c7b22f7ee4fa989f057d}{key\+Map}}
+\begin{DoxyCompactList}\small\item\em Global keyword-\/to-\/token-\/type mapping used during lexical analysis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the \doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type} enumeration used to classify lexical tokens. 
+
+
+
+\label{doc-enum-members}
+\Hypertarget{tokenizer_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}\index{tokenizer.h@{tokenizer.h}!TokenType@{TokenType}}
+\index{TokenType@{TokenType}!tokenizer.h@{tokenizer.h}}
+\doxysubsubsection{\texorpdfstring{TokenType}{TokenType}}
+{\footnotesize\ttfamily \label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921} 
+enum \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}}
+
+
+
+Represents all possible types of tokens identified during lexical analysis. 
+
+This enum is used to classify different words and symbols found in input strings. It includes basic lexical categories, control keywords, and special parser-\/only symbols. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_GERALT@{TOKEN\_GERALT}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_GERALT@{TOKEN\_GERALT}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938} 
+TOKEN\+\_\+\+GERALT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_ACTION@{TOKEN\_ACTION}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_ACTION@{TOKEN\_ACTION}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a4b89281f9efe05d6c61dc5d93df627f8}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a4b89281f9efe05d6c61dc5d93df627f8} 
+TOKEN\+\_\+\+ACTION&"{}\+Geralt"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_LEARNS@{TOKEN\_LEARNS}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_LEARNS@{TOKEN\_LEARNS}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac823d7446ca13d9db0681a5114d5992c}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac823d7446ca13d9db0681a5114d5992c} 
+TOKEN\+\_\+\+LEARNS&"{}loots"{}, "{}trades"{}, "{}brews"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_ENCOUNTERS@{TOKEN\_ENCOUNTERS}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_ENCOUNTERS@{TOKEN\_ENCOUNTERS}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921afe27d3b314c1fb083dac8e21b496b880}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921afe27d3b314c1fb083dac8e21b496b880} 
+TOKEN\+\_\+\+ENCOUNTERS&"{}learns"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_QUANTITY@{TOKEN\_QUANTITY}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_QUANTITY@{TOKEN\_QUANTITY}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acf8d2a2f07a76827071ff34ca642a4ad}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acf8d2a2f07a76827071ff34ca642a4ad} 
+TOKEN\+\_\+\+QUANTITY&"{}encounter"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_WORD@{TOKEN\_WORD}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_WORD@{TOKEN\_WORD}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a28b529bc6cf86659d134593d58a27be5} 
+TOKEN\+\_\+\+WORD&Quantities (only numeric characters) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_COMMA@{TOKEN\_COMMA}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_COMMA@{TOKEN\_COMMA}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a8d265e17914bc733c8b9a880dd097a9e}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a8d265e17914bc733c8b9a880dd097a9e} 
+TOKEN\+\_\+\+COMMA&Words (only alphabetical characters) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_QMARK@{TOKEN\_QMARK}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_QMARK@{TOKEN\_QMARK}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acbfc07cfbbd5091b29b61ab6905aa084} 
+TOKEN\+\_\+\+QMARK&"{},"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_TROPHY@{TOKEN\_TROPHY}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_TROPHY@{TOKEN\_TROPHY}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a7e98ef50ede50c435f049057d09fb9e6}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a7e98ef50ede50c435f049057d09fb9e6} 
+TOKEN\+\_\+\+TROPHY&"{}?"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_SIGN\_KEYWORD@{TOKEN\_SIGN\_KEYWORD}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_SIGN\_KEYWORD@{TOKEN\_SIGN\_KEYWORD}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a6d30eb7f3a89b6b48770e32a58a725f8}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a6d30eb7f3a89b6b48770e32a58a725f8} 
+TOKEN\+\_\+\+SIGN\+\_\+\+KEYWORD&"{}trophy"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_POTION\_KEYWORD@{TOKEN\_POTION\_KEYWORD}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_POTION\_KEYWORD@{TOKEN\_POTION\_KEYWORD}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a1ec9b236a7ba8d88b79b2eb155af279d}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a1ec9b236a7ba8d88b79b2eb155af279d} 
+TOKEN\+\_\+\+POTION\+\_\+\+KEYWORD&"{}sign"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_FOR@{TOKEN\_FOR}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_FOR@{TOKEN\_FOR}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921aaca94097ec53cbcf93cdc0a493251040}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921aaca94097ec53cbcf93cdc0a493251040} 
+TOKEN\+\_\+\+FOR&"{}potion"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_IS@{TOKEN\_IS}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_IS@{TOKEN\_IS}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a5ebaf8c36b5d84b1a717dfce0df266a8}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a5ebaf8c36b5d84b1a717dfce0df266a8} 
+TOKEN\+\_\+\+IS&"{}for"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_EFFECTIVE@{TOKEN\_EFFECTIVE}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_EFFECTIVE@{TOKEN\_EFFECTIVE}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3c1f25d2df6aa2a25445c690aa2cc07a}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3c1f25d2df6aa2a25445c690aa2cc07a} 
+TOKEN\+\_\+\+EFFECTIVE&"{}is"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_AGAINST@{TOKEN\_AGAINST}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_AGAINST@{TOKEN\_AGAINST}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ad91c5d0049a9f69f67798f3147d832d6}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ad91c5d0049a9f69f67798f3147d832d6} 
+TOKEN\+\_\+\+AGAINST&"{}effective"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_CONSISTS@{TOKEN\_CONSISTS}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_CONSISTS@{TOKEN\_CONSISTS}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab9788f2b7a87614ebe2fdd8432a7ecfd}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab9788f2b7a87614ebe2fdd8432a7ecfd} 
+TOKEN\+\_\+\+CONSISTS&"{}against"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_OF@{TOKEN\_OF}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_OF@{TOKEN\_OF}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acce74aba75acd3b25deb2e163b9920e9}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acce74aba75acd3b25deb2e163b9920e9} 
+TOKEN\+\_\+\+OF&"{}consists"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_SINGLE\_SPACE@{TOKEN\_SINGLE\_SPACE}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_SINGLE\_SPACE@{TOKEN\_SINGLE\_SPACE}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab50d5fce257ff698ccb513fd378837d9}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab50d5fce257ff698ccb513fd378837d9} 
+TOKEN\+\_\+\+SINGLE\+\_\+\+SPACE&"{}of"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_MULTIPLE\_SPACE@{TOKEN\_MULTIPLE\_SPACE}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_MULTIPLE\_SPACE@{TOKEN\_MULTIPLE\_SPACE}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af32967c744072002b856e893636f6bb6}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af32967c744072002b856e893636f6bb6} 
+TOKEN\+\_\+\+MULTIPLE\+\_\+\+SPACE&"{} "{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_EXIT@{TOKEN\_EXIT}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_EXIT@{TOKEN\_EXIT}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a650aa351dd41e13b3b1da2904051864e}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a650aa351dd41e13b3b1da2904051864e} 
+TOKEN\+\_\+\+EXIT&more than one "{} "{} or any amount of \textbackslash{}t or ~\newline
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_MULTI\_WORD@{TOKEN\_MULTI\_WORD}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_MULTI\_WORD@{TOKEN\_MULTI\_WORD}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921afce962973d43f02103e9fc4e8cc2710e}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921afce962973d43f02103e9fc4e8cc2710e} 
+TOKEN\+\_\+\+MULTI\+\_\+\+WORD&Terminate the program. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_WHAT@{TOKEN\_WHAT}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_WHAT@{TOKEN\_WHAT}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac07de5a2599015fa9504537b46ef1aa0}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac07de5a2599015fa9504537b46ef1aa0} 
+TOKEN\+\_\+\+WHAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_IN@{TOKEN\_IN}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_IN@{TOKEN\_IN}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921aab6505c0fd8126a58622ad931de3ce86}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921aab6505c0fd8126a58622ad931de3ce86} 
+TOKEN\+\_\+\+IN&"{}\+What"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_A@{TOKEN\_A}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_A@{TOKEN\_A}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a9fb117b9a3a962ef11e864cf4e47d841}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a9fb117b9a3a962ef11e864cf4e47d841} 
+TOKEN\+\_\+A&"{}in"{} "{}a"{} – Not detected during tokenization. It is handled explicitly in the parser, and defaults to TOKEN\+\_\+\+WORD during lexical analysis. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_INGREDIENT@{TOKEN\_INGREDIENT}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_INGREDIENT@{TOKEN\_INGREDIENT}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acf2e7e2ebf005ddd4fa04fd56a2726a5}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921acf2e7e2ebf005ddd4fa04fd56a2726a5} 
+TOKEN\+\_\+\+INGREDIENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_TOTAL@{TOKEN\_TOTAL}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_TOTAL@{TOKEN\_TOTAL}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921af6f5c539d2b2e2376828c6cef2071e7f} 
+TOKEN\+\_\+\+TOTAL&"{}ingredient"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_UNDEFINED@{TOKEN\_UNDEFINED}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_UNDEFINED@{TOKEN\_UNDEFINED}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a4e9a7212ea985c5ffdbf0080c464cc88}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a4e9a7212ea985c5ffdbf0080c464cc88} 
+TOKEN\+\_\+\+UNDEFINED&"{}\+Total"{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_LOOTS@{TOKEN\_LOOTS}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_LOOTS@{TOKEN\_LOOTS}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3fae50190858a4171ed2b22b99a5ab2c}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3fae50190858a4171ed2b22b99a5ab2c} 
+TOKEN\+\_\+\+LOOTS&Specific action\+: "{}loots"{} (resolved from TOKEN\+\_\+\+ACTION) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_TRADES@{TOKEN\_TRADES}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_TRADES@{TOKEN\_TRADES}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ae84b96a219fff1c7f896ffde0b5bdef1}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ae84b96a219fff1c7f896ffde0b5bdef1} 
+TOKEN\+\_\+\+TRADES&Specific action\+: "{}trades"{} (resolved from TOKEN\+\_\+\+ACTION) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_BREWS@{TOKEN\_BREWS}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_BREWS@{TOKEN\_BREWS}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3eabeb590825058a5115428ce9d27276}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a3eabeb590825058a5115428ce9d27276} 
+TOKEN\+\_\+\+BREWS&Specific action\+: "{}brews"{} (resolved from TOKEN\+\_\+\+ACTION) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_POTION\_NAME@{TOKEN\_POTION\_NAME}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_POTION\_NAME@{TOKEN\_POTION\_NAME}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac2d61744f5ad364f373c41955c7b6c36}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ac2d61744f5ad364f373c41955c7b6c36} 
+TOKEN\+\_\+\+POTION\+\_\+\+NAME&Represents any potion name (could be TOKEN\+\_\+\+WORD or TOKEN\+\_\+\+MULTI\+\_\+\+WORD) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_RECURSIVE\_INGRED\_LIST@{TOKEN\_RECURSIVE\_INGRED\_LIST}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_RECURSIVE\_INGRED\_LIST@{TOKEN\_RECURSIVE\_INGRED\_LIST}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921add9f05f752d26a956ab739306180cce0}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921add9f05f752d26a956ab739306180cce0} 
+TOKEN\+\_\+\+RECURSIVE\+\_\+\+INGRED\+\_\+\+LIST&A recursive list of ingredient tokens. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOKEN\_RECURSIVE\_TROPHY\_LIST@{TOKEN\_RECURSIVE\_TROPHY\_LIST}!tokenizer.h@{tokenizer.h}}\index{tokenizer.h@{tokenizer.h}!TOKEN\_RECURSIVE\_TROPHY\_LIST@{TOKEN\_RECURSIVE\_TROPHY\_LIST}}}\Hypertarget{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab22295854d293957c20846046e392b11}\label{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921ab22295854d293957c20846046e392b11} 
+TOKEN\+\_\+\+RECURSIVE\+\_\+\+TROPHY\+\_\+\+LIST&A recursive list of trophy tokens. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-var-members}
+\Hypertarget{tokenizer_8h_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{tokenizer_8h_a655fc5d8a874c7b22f7ee4fa989f057d}\index{tokenizer.h@{tokenizer.h}!keyMap@{keyMap}}
+\index{keyMap@{keyMap}!tokenizer.h@{tokenizer.h}}
+\doxysubsubsection{\texorpdfstring{keyMap}{keyMap}}
+{\footnotesize\ttfamily \label{tokenizer_8h_a655fc5d8a874c7b22f7ee4fa989f057d} 
+std\+::unordered\+\_\+map$<$std\+::string, \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ key\+Map\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Global keyword-\/to-\/token-\/type mapping used during lexical analysis. 
+
+This map defines known keywords and their corresponding \doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}. It is used by the tokenizer to identify and classify input strings.
+
+Global keyword-\/to-\/token-\/type mapping used during lexical analysis.
+
+This map is used outside the \doxylink{class_token}{Token} class, typically during tokenization, to look up whether a given word (like "{}\+Geralt"{}, "{}loots"{}, "{}potion"{}) is a keyword and what \doxylink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type} it should be classified as.
+
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (\mbox{\hyperlink{token_8cpp_a655fc5d8a874c7b22f7ee4fa989f057d}{keyMap}}[\textcolor{stringliteral}{"{}Geralt"{}}]\ ==\ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921a2f1a0d3b4c4fc318de57b72beb4b0938}{TOKEN\_GERALT}})\ \{\ ...\ \}}
+
+\end{DoxyCode}
+ 

@@ -1,0 +1,52 @@
+\doxysection{geralt.\+h}
+\hypertarget{geralt_8h_source}{}\label{geralt_8h_source}\index{src/geralt.h@{src/geralt.h}}
+\mbox{\hyperlink{geralt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GERALT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GERALT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ingredient_8h}{ingredient.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{potion_8h}{potion.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sign_8h}{sign.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{monster_8h}{monster.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{trophy_8h}{trophy.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{token_8h}{token.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_geralt}{Geralt}}\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ std::map<std::string,\ std::shared\_ptr<Ingredient>>\ ingredients;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ std::map<string,\ shared\_ptr<Potion>>\ potions;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ std::map<string,\ shared\_ptr<Monster>>\ monsters;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ std::map<string,\ shared\_ptr<Trophy>>\ trophies;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ std::map<string,\ shared\_ptr<Ingredient>>\&\ \mbox{\hyperlink{class_geralt_a18d243fa7b3a232c6fa08389ca5e36f4}{getIngredients}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ std::map<string,\ shared\_ptr<Potion>>\&\ \mbox{\hyperlink{class_geralt_a7e8cd9e286c414309e8807e685b8929d}{getPotions}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ std::map<string,\ shared\_ptr<Monster>>\&\ \mbox{\hyperlink{class_geralt_aca5f175cd568fd60f8d1c0eaf112ffcf}{getMonsters}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ std::map<string,\ shared\_ptr<Trophy>>\&\ \mbox{\hyperlink{class_geralt_afffc1d9833bb26af2bb15a04bf52452f}{getTrophies}}();}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_a2ff66a4885f5fcedc4226978a420870e}{loot}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_a4b54998bd2e74a874304a955e4e729b5}{trade}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_acffa4d0ce4b4666c178cac5a8ab37e81}{brew}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_a363e69d75a50dcad4009a0b937d60b0c}{learnSign}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_a03a1e18d6a821fe178393de95189dfd9}{learnPotion}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_a0c1b1a882c15615ffa7655acba8fcdca}{learnFormula}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_ae013a28c0547b280b2308e2b59b3f6ca}{encounter}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_a3734ab8df815c286e052ff4210b4b3a4}{querySpecificIngredient}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_a2d99f735e5c5a1982f5a1802c9654cde}{querySpecificPotion}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_a1d9fb376cb654f218fc9e5fcd03159df}{querySpecificTrophy}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_aec02c92ffc5103d74b187bb431e66ba5}{queryAllIngredients}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_a48c1bf5f5a7bf828804503eaa310cea3}{queryAllPotions}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_aa112f614e5746af13acf0e1edb743f98}{queryAllTrophies}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_a527b7f120721da78df5b2981d9709a25}{queryEffectiveness}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geralt_ac9c05b7fc8e22ab133065a78026eddbb}{queryFormula}}(\textcolor{keyword}{const}\ std::vector<Token>\&\ tokenList);}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,33 @@
+\doxysection{src/geralt.cpp File Reference}
+\hypertarget{geralt_8cpp}{}\label{geralt_8cpp}\index{src/geralt.cpp@{src/geralt.cpp}}
+
+
+Implementation of Geralt’s inventory, bestiary and alchemy‑tracking logic for CMPE 230 Assignment 3 “\+Witcher \+Tracker”.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include "{}geralt.\+h"{}}\newline
+{\ttfamily \#include "{}tokenizer.\+h"{}}\newline
+{\ttfamily \#include "{}token.\+h"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+Implementation of Geralt’s inventory, bestiary and alchemy‑tracking logic for CMPE 230 Assignment 3 “\+Witcher \+Tracker”. 
+
+This file contains all method definitions that mutate or query global game state\+: static accessors for shared maps ({\ttfamily ingredients}, {\ttfamily potions}, {\ttfamily monsters}, {\ttfamily trophies}) inventory actions — loot, trade, brew knowledge acquisition — learn\+Sign, learn\+Potion, learn\+Formula encounter resolution query helpers for inventory, bestiary and alchemy
+
+Each public method directly corresponds to a grammar rule in the assignment specification and produces exactly the console output prescribed by the spec.
+
+\begin{DoxyAuthor}{Author}
+Akin Tuna Sakalli 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 1, 2025 
+\end{DoxyDate}

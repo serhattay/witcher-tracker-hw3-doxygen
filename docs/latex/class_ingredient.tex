@@ -1,0 +1,101 @@
+\doxysection{Ingredient Class Reference}
+\hypertarget{class_ingredient}{}\label{class_ingredient}\index{Ingredient@{Ingredient}}
+
+
+This class acts as a blueprint for the \doxylink{class_ingredient}{Ingredient} object that stores the name of the ingredient and the current quantity owned by \doxylink{class_geralt}{Geralt}. Simple helpers allow increasing or decreasing that quantity while keeping the data encapsulated.  
+
+
+
+
+{\ttfamily \#include $<$ingredient.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ingredient_a4381fc48ac3d4abde99461a21e8b2a45}{Ingredient}} (const string \&name, int quantity)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_ingredient}{Ingredient}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ingredient_abc0059c826896a97a309e809ebfa4da5}{get\+Quantity}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve current quantity of the ingredient owned by \doxylink{class_geralt}{Geralt}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ingredient_abe447f2628f6765eb88c18e4896fbf69}{increase\+Quantity}} (int amount)
+\begin{DoxyCompactList}\small\item\em Increase quantity by a positive {\ttfamily amount}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ingredient_ad5bca641cc70718372e38ffb36628fdc}{decrease\+Quantity}} (int amount)
+\begin{DoxyCompactList}\small\item\em Decrease quantity by a positive {\ttfamily amount}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class acts as a blueprint for the \doxylink{class_ingredient}{Ingredient} object that stores the name of the ingredient and the current quantity owned by \doxylink{class_geralt}{Geralt}. Simple helpers allow increasing or decreasing that quantity while keeping the data encapsulated. 
+
+\label{doc-constructors}
+\Hypertarget{class_ingredient_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ingredient_a4381fc48ac3d4abde99461a21e8b2a45}\index{Ingredient@{Ingredient}!Ingredient@{Ingredient}}
+\index{Ingredient@{Ingredient}!Ingredient@{Ingredient}}
+\doxysubsubsection{\texorpdfstring{Ingredient()}{Ingredient()}}
+{\footnotesize\ttfamily \label{class_ingredient_a4381fc48ac3d4abde99461a21e8b2a45} 
+Ingredient\+::\+Ingredient (\begin{DoxyParamCaption}\item[{const string \&}]{name}{, }\item[{int}]{quantity}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_ingredient}{Ingredient}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \doxylink{class_ingredient}{Ingredient} identifier (e.\+g., "{}\+Rebis"{}). \\
+\hline
+{\em quantity} & Initial amount to store (must be non‑negative). \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_ingredient_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ingredient_ad5bca641cc70718372e38ffb36628fdc}\index{Ingredient@{Ingredient}!decreaseQuantity@{decreaseQuantity}}
+\index{decreaseQuantity@{decreaseQuantity}!Ingredient@{Ingredient}}
+\doxysubsubsection{\texorpdfstring{decreaseQuantity()}{decreaseQuantity()}}
+{\footnotesize\ttfamily \label{class_ingredient_ad5bca641cc70718372e38ffb36628fdc} 
+void Ingredient\+::decrease\+Quantity (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Decrease quantity by a positive {\ttfamily amount}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount to subtract. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ingredient_abc0059c826896a97a309e809ebfa4da5}\index{Ingredient@{Ingredient}!getQuantity@{getQuantity}}
+\index{getQuantity@{getQuantity}!Ingredient@{Ingredient}}
+\doxysubsubsection{\texorpdfstring{getQuantity()}{getQuantity()}}
+{\footnotesize\ttfamily \label{class_ingredient_abc0059c826896a97a309e809ebfa4da5} 
+int Ingredient\+::get\+Quantity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve current quantity of the ingredient owned by \doxylink{class_geralt}{Geralt}. 
+
+\begin{DoxyReturn}{Returns}
+Quantity of the ingredient. 
+\end{DoxyReturn}
+\Hypertarget{class_ingredient_abe447f2628f6765eb88c18e4896fbf69}\index{Ingredient@{Ingredient}!increaseQuantity@{increaseQuantity}}
+\index{increaseQuantity@{increaseQuantity}!Ingredient@{Ingredient}}
+\doxysubsubsection{\texorpdfstring{increaseQuantity()}{increaseQuantity()}}
+{\footnotesize\ttfamily \label{class_ingredient_abe447f2628f6765eb88c18e4896fbf69} 
+void Ingredient\+::increase\+Quantity (\begin{DoxyParamCaption}\item[{int}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Increase quantity by a positive {\ttfamily amount}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount to add. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{ingredient_8h}{ingredient.\+h}}\item 
+src/\mbox{\hyperlink{ingredient_8cpp}{ingredient.\+cpp}}\end{DoxyCompactItemize}

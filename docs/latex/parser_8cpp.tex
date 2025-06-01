@@ -1,0 +1,179 @@
+\doxysection{src/parser.cpp File Reference}
+\hypertarget{parser_8cpp}{}\label{parser_8cpp}\index{src/parser.cpp@{src/parser.cpp}}
+
+
+Contains logic for parsing tokenized input and dispatching appropriate \doxylink{class_geralt}{Geralt} inventory functions.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include "{}token.\+h"{}}\newline
+{\ttfamily \#include "{}parser.\+h"{}}\newline
+{\ttfamily \#include "{}geralt.\+h"{}}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{parser_8cpp_a343fe4a23cbbf834f4e2190488a0ec5d}{Inventory\+Func}}) (const vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&)
+\begin{DoxyCompactList}\small\item\em Function pointer type for inventory actions taking a vector of tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{parser_8cpp_ac885ba49a362ec53a0f3cf12e55768fc}{exit\+Program}} (const vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&)
+\begin{DoxyCompactList}\small\item\em Terminates the program. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{parser_8cpp_a07f0b096159c3af6794cde1442216d76}{parse\+Command}} (const vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&tokens)
+\begin{DoxyCompactList}\small\item\em Parses the input tokens and matches them against known syntax patterns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unordered\+\_\+map$<$ \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02d}{Parser\+Action\+Type}}, vector$<$ \mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} $>$ $>$ \mbox{\hyperlink{parser_8cpp_ae53c4e9fc6e6e5736cc6630a64c8031c}{action\+To\+Syntax\+Map}}
+\begin{DoxyCompactList}\small\item\em Maps parser action types to their corresponding expected token syntax patterns. \end{DoxyCompactList}\item 
+unordered\+\_\+map$<$ \mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02d}{Parser\+Action\+Type}}, \mbox{\hyperlink{parser_8cpp_a343fe4a23cbbf834f4e2190488a0ec5d}{Inventory\+Func}} $>$ \mbox{\hyperlink{parser_8cpp_a0145c025f4f96dabd8ebea3cc6b44fb5}{action\+To\+Func\+Map}}
+\begin{DoxyCompactList}\small\item\em Maps parser action types to the corresponding \doxylink{class_geralt}{Geralt} inventory functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains logic for parsing tokenized input and dispatching appropriate \doxylink{class_geralt}{Geralt} inventory functions. 
+
+
+
+\label{doc-typedef-members}
+\Hypertarget{parser_8cpp_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{parser_8cpp_a343fe4a23cbbf834f4e2190488a0ec5d}\index{parser.cpp@{parser.cpp}!InventoryFunc@{InventoryFunc}}
+\index{InventoryFunc@{InventoryFunc}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{InventoryFunc}{InventoryFunc}}
+{\footnotesize\ttfamily \label{parser_8cpp_a343fe4a23cbbf834f4e2190488a0ec5d} 
+typedef void(\texorpdfstring{$\ast$}{*} Inventory\+Func) (const vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&)}
+
+
+
+Function pointer type for inventory actions taking a vector of tokens. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{parser_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{parser_8cpp_ac885ba49a362ec53a0f3cf12e55768fc}\index{parser.cpp@{parser.cpp}!exitProgram@{exitProgram}}
+\index{exitProgram@{exitProgram}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{exitProgram()}{exitProgram()}}
+{\footnotesize\ttfamily \label{parser_8cpp_ac885ba49a362ec53a0f3cf12e55768fc} 
+void exit\+Program (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{tokens}{}\end{DoxyParamCaption})}
+
+
+
+Terminates the program. 
+
+Terminates the program gracefully.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & Vector of tokens passed to this function (unused), just for compatibility with inventory functions in terms of signature.\\
+\hline
+\end{DoxyParams}
+This is the function called when the EXIT\+\_\+\+COMMAND syntax is matched.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & Vector of tokens passed (unused in this function). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{parser_8cpp_a07f0b096159c3af6794cde1442216d76}\index{parser.cpp@{parser.cpp}!parseCommand@{parseCommand}}
+\index{parseCommand@{parseCommand}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{parseCommand()}{parseCommand()}}
+{\footnotesize\ttfamily \label{parser_8cpp_a07f0b096159c3af6794cde1442216d76} 
+bool parse\+Command (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_token}{Token}} $>$ \&}]{tokens}{}\end{DoxyParamCaption})}
+
+
+
+Parses the input tokens and matches them against known syntax patterns. 
+
+External parser function that analyzes tokens and executes appropriate logic.
+
+This function checks each possible grammar rule (from {\ttfamily action\+To\+Syntax\+Map}) against the input tokens. If a match is found, the associated function (from {\ttfamily action\+To\+Func\+Map}) is called.
+
+Special handling is included for recursive ingredient and trophy lists and context-\/sensitive keywords.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & Vector of tokens representing the user command. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If a matching grammar rule is found and function is successfully invoked. 
+
+false If no valid syntax pattern matches the tokens. 
+\end{DoxyReturn}
+
+
+\label{doc-var-members}
+\Hypertarget{parser_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{parser_8cpp_a0145c025f4f96dabd8ebea3cc6b44fb5}\index{parser.cpp@{parser.cpp}!actionToFuncMap@{actionToFuncMap}}
+\index{actionToFuncMap@{actionToFuncMap}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{actionToFuncMap}{actionToFuncMap}}
+{\footnotesize\ttfamily \label{parser_8cpp_a0145c025f4f96dabd8ebea3cc6b44fb5} 
+unordered\+\_\+map$<$\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02d}{Parser\+Action\+Type}}, \mbox{\hyperlink{parser_8cpp_a343fe4a23cbbf834f4e2190488a0ec5d}{Inventory\+Func}}$>$ action\+To\+Func\+Map}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02daba8203c6b17bf616140e336373a4a672}{LOOT\_ACTION}},\ \mbox{\hyperlink{class_geralt_a2ff66a4885f5fcedc4226978a420870e}{Geralt::loot}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02dab7d03b2c32d46b3ebfb061b72e4afbd9}{TRADE\_ACTION}},\ \mbox{\hyperlink{class_geralt_a4b54998bd2e74a874304a955e4e729b5}{Geralt::trade}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02daf4ba1c812c84dda65be8b44f7bf430a2}{BREW\_ACTION}},\ \mbox{\hyperlink{class_geralt_acffa4d0ce4b4666c178cac5a8ab37e81}{Geralt::brew}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02daba75b3afe97029fe9fde18b877646f8f}{KNOWLEDGE\_EFFECTIVENESS\_SIGN}},\ \mbox{\hyperlink{class_geralt_a363e69d75a50dcad4009a0b937d60b0c}{Geralt::learnSign}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da78b1ea9585f2683ae60d8f935608b00b}{KNOWLEDGE\_EFFECTIVENESS\_POTION}},\ \mbox{\hyperlink{class_geralt_a03a1e18d6a821fe178393de95189dfd9}{Geralt::learnPotion}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02dad4263a113e27e7d059b0ab66342d3f24}{KNOWLEDGE\_POTION\_FORMULA}},\ \mbox{\hyperlink{class_geralt_a0c1b1a882c15615ffa7655acba8fcdca}{Geralt::learnFormula}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da9f93534eed94db541fa3c25728591555}{ENCOUNTER}},\ \mbox{\hyperlink{class_geralt_ae013a28c0547b280b2308e2b59b3f6ca}{Geralt::encounter}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02daeb4af02d145b8bedfb1e51c7c7057103}{TOTAL\_ALL\_INGREDIENT\_QUERY}},\ \mbox{\hyperlink{class_geralt_aec02c92ffc5103d74b187bb431e66ba5}{Geralt::queryAllIngredients}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da3725955518e9656ad2e6c7416d701bb7}{TOTAL\_ALL\_POTION\_QUERY}},\ \mbox{\hyperlink{class_geralt_a48c1bf5f5a7bf828804503eaa310cea3}{Geralt::queryAllPotions}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da5db0e0c75f2144b03f29d5e7993ef48d}{TOTAL\_ALL\_TROPHY\_QUERY}},\ \mbox{\hyperlink{class_geralt_aa112f614e5746af13acf0e1edb743f98}{Geralt::queryAllTrophies}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02dac09d1bf484ca7e2aca84af3a1746feab}{TOTAL\_SPECIFIC\_INGREDIENT\_QUERY}},\ \mbox{\hyperlink{class_geralt_a3734ab8df815c286e052ff4210b4b3a4}{Geralt::querySpecificIngredient}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da561d557e0ec9cfa0c7fb984b9e4e4326}{TOTAL\_SPECIFIC\_POTION\_QUERY}},\ \mbox{\hyperlink{class_geralt_a2d99f735e5c5a1982f5a1802c9654cde}{Geralt::querySpecificPotion}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da5af9772b366fcb7cdb23431ca508a4ac}{TOTAL\_SPECIFIC\_TROPHY\_QUERY}},\ \mbox{\hyperlink{class_geralt_a1d9fb376cb654f218fc9e5fcd03159df}{Geralt::querySpecificTrophy}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da8d69a4c5d7cd4f64693ca704166c8365}{BESTIARY\_QUERY}},\ \mbox{\hyperlink{class_geralt_a527b7f120721da78df5b2981d9709a25}{Geralt::queryEffectiveness}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da0390b0f3325f73582c5197003a264c7c}{ALCHEMY\_QUERY}},\ \mbox{\hyperlink{class_geralt_ac9c05b7fc8e22ab133065a78026eddbb}{Geralt::queryFormula}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da6806f6a7a0c0b62e7c8c467e490721a8}{EXIT\_COMMAND}},\ \mbox{\hyperlink{parser_8cpp_ac885ba49a362ec53a0f3cf12e55768fc}{exitProgram}}\}\ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Maps parser action types to the corresponding \doxylink{class_geralt}{Geralt} inventory functions. 
+
+Once a sentence matches a syntax pattern, the corresponding function is called via this map. \Hypertarget{parser_8cpp_ae53c4e9fc6e6e5736cc6630a64c8031c}\index{parser.cpp@{parser.cpp}!actionToSyntaxMap@{actionToSyntaxMap}}
+\index{actionToSyntaxMap@{actionToSyntaxMap}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{actionToSyntaxMap}{actionToSyntaxMap}}
+{\footnotesize\ttfamily \label{parser_8cpp_ae53c4e9fc6e6e5736cc6630a64c8031c} 
+unordered\+\_\+map$<$\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02d}{Parser\+Action\+Type}}, vector$<$\mbox{\hyperlink{tokenizer_8h_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}$>$ $>$ action\+To\+Syntax\+Map}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02daba8203c6b17bf616140e336373a4a672}{LOOT\_ACTION}},\ \mbox{\hyperlink{parser_8h_aee294cf913fc698d7416b397a56fb4c0}{lootActionVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02dab7d03b2c32d46b3ebfb061b72e4afbd9}{TRADE\_ACTION}},\ \mbox{\hyperlink{parser_8h_aa06599e44f8894b2c39c80ccdf6599fa}{tradeActionVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02daf4ba1c812c84dda65be8b44f7bf430a2}{BREW\_ACTION}},\ \mbox{\hyperlink{parser_8h_ae8eeafd7baadf395bb1434a4e184eb6a}{brewActionVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02daba75b3afe97029fe9fde18b877646f8f}{KNOWLEDGE\_EFFECTIVENESS\_SIGN}},\ \mbox{\hyperlink{parser_8h_a2cfab400211f23b5edb52018caa8f39e}{knowEffecSignVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da78b1ea9585f2683ae60d8f935608b00b}{KNOWLEDGE\_EFFECTIVENESS\_POTION}},\ \mbox{\hyperlink{parser_8h_a5455e3a72e79cf83abdef8126c95acfa}{knowEffecPotVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02dad4263a113e27e7d059b0ab66342d3f24}{KNOWLEDGE\_POTION\_FORMULA}},\ \mbox{\hyperlink{parser_8h_a3717bc353a2c46fd893dd9ebc09c66f7}{knowPotFormulaVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da9f93534eed94db541fa3c25728591555}{ENCOUNTER}},\ \mbox{\hyperlink{parser_8h_a9cc8f71bf0e0b70007f88884b18f744e}{encounterVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02daeb4af02d145b8bedfb1e51c7c7057103}{TOTAL\_ALL\_INGREDIENT\_QUERY}},\ \mbox{\hyperlink{parser_8h_ab3e98793b4c5c624381320c0c6a0da7a}{totalAllIngredQueryVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da3725955518e9656ad2e6c7416d701bb7}{TOTAL\_ALL\_POTION\_QUERY}},\ \mbox{\hyperlink{parser_8h_a2038a86582d13fcaf3555967a25f8c9a}{totalAllPotQueryVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da5db0e0c75f2144b03f29d5e7993ef48d}{TOTAL\_ALL\_TROPHY\_QUERY}},\ \mbox{\hyperlink{parser_8h_abfdfff4f50008a5ddc52f0df67a0616d}{totalAllTrophyQueryVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02dac09d1bf484ca7e2aca84af3a1746feab}{TOTAL\_SPECIFIC\_INGREDIENT\_QUERY}},\ \mbox{\hyperlink{parser_8h_a3ae4e1bdd3cfaf36befdd83ea74a054b}{totalSpecIngredQueryVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da561d557e0ec9cfa0c7fb984b9e4e4326}{TOTAL\_SPECIFIC\_POTION\_QUERY}},\ \mbox{\hyperlink{parser_8h_af5cac15613b330b42acd3afff0ef07d6}{totalSpecPotQueryVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da5af9772b366fcb7cdb23431ca508a4ac}{TOTAL\_SPECIFIC\_TROPHY\_QUERY}},\ \mbox{\hyperlink{parser_8h_a65dface3d81fad7e999c7049935ef872}{totalSpecTrophyQueryVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da8d69a4c5d7cd4f64693ca704166c8365}{BESTIARY\_QUERY}},\ \mbox{\hyperlink{parser_8h_a557b196921f001f64864f5ba4380a690}{bestiaryQueryVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da0390b0f3325f73582c5197003a264c7c}{ALCHEMY\_QUERY}},\ \mbox{\hyperlink{parser_8h_a59b1628a0b7d295525748d8a1ac02bdf}{alchQueryVec}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{parser_8h_a636ed658a751cd011a49381793a2a02da6806f6a7a0c0b62e7c8c467e490721a8}{EXIT\_COMMAND}},\ \mbox{\hyperlink{parser_8h_a2c58752ad1a36acebb4ce829bdd0446b}{exitComVec}}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Maps parser action types to their corresponding expected token syntax patterns. 
+
+Each \doxylink{parser_8h_a636ed658a751cd011a49381793a2a02d}{Parser\+Action\+Type} is associated with a vector of Token\+Types that defines a valid grammar pattern. 

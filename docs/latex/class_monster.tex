@@ -1,0 +1,108 @@
+\doxysection{Monster Class Reference}
+\hypertarget{class_monster}{}\label{class_monster}\index{Monster@{Monster}}
+
+
+This class acts as a blueprint for the \doxylink{class_monster}{Monster} object that stores its name and the lists of signs and potions that are effective against it.  
+
+
+
+
+{\ttfamily \#include $<$monster.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_monster_a8642b8053dd09625b17ffdcb663d6618}{Monster}} (const string \&name)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_monster}{Monster}. \end{DoxyCompactList}\item 
+const vector$<$ string $>$ \& \mbox{\hyperlink{class_monster_a3c83d998e492100c9ef5469cbd68f8f7}{get\+Effective\+Signs}} ()
+\begin{DoxyCompactList}\small\item\em Getter function for the vector that stores effective signs against the monster. \end{DoxyCompactList}\item 
+const vector$<$ string $>$ \& \mbox{\hyperlink{class_monster_a344b2f691d8ee4f62b4ba503ee2b1213}{get\+Effective\+Potions}} ()
+\begin{DoxyCompactList}\small\item\em Getter function for the vector that stores effective potinos against the monster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monster_a5f82c8872dfcf85d3eaea0be3c567468}{add\+Effective\+Sign}} (const string \&name)
+\begin{DoxyCompactList}\small\item\em Adds a sign name to the effective signs list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_monster_a53149fd16a479d6a90ad39a9039b5d71}{add\+Effective\+Potion}} (const string \&name)
+\begin{DoxyCompactList}\small\item\em Adds a potion name to the effective potions list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class acts as a blueprint for the \doxylink{class_monster}{Monster} object that stores its name and the lists of signs and potions that are effective against it. 
+
+\label{doc-constructors}
+\Hypertarget{class_monster_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_monster_a8642b8053dd09625b17ffdcb663d6618}\index{Monster@{Monster}!Monster@{Monster}}
+\index{Monster@{Monster}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{Monster()}{Monster()}}
+{\footnotesize\ttfamily \label{class_monster_a8642b8053dd09625b17ffdcb663d6618} 
+Monster\+::\+Monster (\begin{DoxyParamCaption}\item[{const string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_monster}{Monster}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \doxylink{class_monster}{Monster}\textquotesingle{}s name. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_monster_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_monster_a53149fd16a479d6a90ad39a9039b5d71}\index{Monster@{Monster}!addEffectivePotion@{addEffectivePotion}}
+\index{addEffectivePotion@{addEffectivePotion}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{addEffectivePotion()}{addEffectivePotion()}}
+{\footnotesize\ttfamily \label{class_monster_a53149fd16a479d6a90ad39a9039b5d71} 
+void Monster\+::add\+Effective\+Potion (\begin{DoxyParamCaption}\item[{const string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Adds a potion name to the effective potions list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the effective potion \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_monster_a5f82c8872dfcf85d3eaea0be3c567468}\index{Monster@{Monster}!addEffectiveSign@{addEffectiveSign}}
+\index{addEffectiveSign@{addEffectiveSign}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{addEffectiveSign()}{addEffectiveSign()}}
+{\footnotesize\ttfamily \label{class_monster_a5f82c8872dfcf85d3eaea0be3c567468} 
+void Monster\+::add\+Effective\+Sign (\begin{DoxyParamCaption}\item[{const string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Adds a sign name to the effective signs list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the effective sign \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_monster_a344b2f691d8ee4f62b4ba503ee2b1213}\index{Monster@{Monster}!getEffectivePotions@{getEffectivePotions}}
+\index{getEffectivePotions@{getEffectivePotions}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{getEffectivePotions()}{getEffectivePotions()}}
+{\footnotesize\ttfamily \label{class_monster_a344b2f691d8ee4f62b4ba503ee2b1213} 
+const vector$<$ string $>$ \& Monster\+::get\+Effective\+Potions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Getter function for the vector that stores effective potinos against the monster. 
+
+\Hypertarget{class_monster_a3c83d998e492100c9ef5469cbd68f8f7}\index{Monster@{Monster}!getEffectiveSigns@{getEffectiveSigns}}
+\index{getEffectiveSigns@{getEffectiveSigns}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{getEffectiveSigns()}{getEffectiveSigns()}}
+{\footnotesize\ttfamily \label{class_monster_a3c83d998e492100c9ef5469cbd68f8f7} 
+const vector$<$ string $>$ \& Monster\+::get\+Effective\+Signs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Getter function for the vector that stores effective signs against the monster. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{monster_8h}{monster.\+h}}\item 
+src/\mbox{\hyperlink{monster_8cpp}{monster.\+cpp}}\end{DoxyCompactItemize}

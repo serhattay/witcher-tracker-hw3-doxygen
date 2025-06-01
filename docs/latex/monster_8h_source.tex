@@ -1,0 +1,33 @@
+\doxysection{monster.\+h}
+\hypertarget{monster_8h_source}{}\label{monster_8h_source}\index{src/monster.h@{src/monster.h}}
+\mbox{\hyperlink{monster_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MONSTER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MONSTER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_monster_a8642b8053dd09625b17ffdcb663d6618}{Monster}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{string}\ name;}
+\DoxyCodeLine{00023\ \ \ \ \ vector<string>\ effectiveSigns;}
+\DoxyCodeLine{00024\ \ \ \ \ vector<string>\ effectivePotions;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_monster_a8642b8053dd09625b17ffdcb663d6618}{Monster}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ name);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ vector<string>\&\ \mbox{\hyperlink{class_monster_a3c83d998e492100c9ef5469cbd68f8f7}{getEffectiveSigns}}();}
+\DoxyCodeLine{00036\ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ vector<string>\&\ \mbox{\hyperlink{class_monster_a344b2f691d8ee4f62b4ba503ee2b1213}{getEffectivePotions}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_monster_a5f82c8872dfcf85d3eaea0be3c567468}{addEffectiveSign}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ name);}
+\DoxyCodeLine{00047\ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_monster_a53149fd16a479d6a90ad39a9039b5d71}{addEffectivePotion}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ name);}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

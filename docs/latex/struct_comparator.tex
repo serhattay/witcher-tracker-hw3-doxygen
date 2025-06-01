@@ -1,0 +1,41 @@
+\doxysection{Comparator Struct Reference}
+\hypertarget{struct_comparator}{}\label{struct_comparator}\index{Comparator@{Comparator}}
+
+
+Custom comparator for quantity-\/ingredient pairs in the formula.  
+
+
+
+
+{\ttfamily \#include $<$potion.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{struct_comparator_ac615787bf790d35c619b367cdae96cb3}{operator()}} (const pair$<$ string, int $>$ \&a, const pair$<$ string, int $>$ \&b) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Custom comparator for quantity-\/ingredient pairs in the formula. 
+
+Orders two quantity, ingredient pairs\+:
+\begin{DoxyEnumerate}
+\item Higher {\ttfamily quantity} comes first.
+\item For equal quantities, lower (alphabetical) {\ttfamily ingredient} name comes first. 
+\end{DoxyEnumerate}
+
+\label{doc-func-members}
+\Hypertarget{struct_comparator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_comparator_ac615787bf790d35c619b367cdae96cb3}\index{Comparator@{Comparator}!operator()@{operator()}}
+\index{operator()@{operator()}!Comparator@{Comparator}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily \label{struct_comparator_ac615787bf790d35c619b367cdae96cb3} 
+bool Comparator\+::operator() (\begin{DoxyParamCaption}\item[{const pair$<$ string, int $>$ \&}]{a}{, }\item[{const pair$<$ string, int $>$ \&}]{b}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{potion_8h}{potion.\+h}}\end{DoxyCompactItemize}
